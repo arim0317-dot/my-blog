@@ -1,17 +1,14 @@
 ---
-# 이 front matter는 반드시 있어야 Jekyll이 파일을 처리합니다. 지우지 마세요.
 ---
 
 @import "minima";
 
-// ── 폰트 : 좀 더 세련된 본문/제목 폰트로 교체 ──
 @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600&display=swap');
 
 body {
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-// ── 헤더 영역 (사이트 제목이 있는 상단 공간) ──
 .site-header {
   background: linear-gradient(180deg, #eafaf5 0%, #dcf3ea 100%);
   border-bottom: 1px solid #c9e8dc;
@@ -21,8 +18,7 @@ body {
 .site-title {
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: #1f3d33 !important;   // 민트 배경 위에서 또렷하게 보이도록 짙은 그린 톤
-  transition: opacity 0.2s ease;
+  color: #1f3d33 !important;
 
   &:hover {
     opacity: 0.75;
@@ -34,7 +30,6 @@ body {
   color: #2f5347;
   font-weight: 500;
   margin-left: 24px;
-  transition: color 0.2s ease;
 
   &:hover {
     color: #0f3b2c;
@@ -42,7 +37,6 @@ body {
   }
 }
 
-// 모바일 메뉴 버튼도 톤 맞춰주기
 .site-nav .menu-icon svg {
   fill: #2f5347;
 }
