@@ -1,5 +1,6 @@
-title: "나의 블로그"
-author: "신아림"
+# 사이트 기본 정보
+title: "내 블로그 제목"
+author: "작성자 이름"
 description: "블로그에 대한 짧은 설명입니다."
 url: "https://arim0317-dot.github.io"
 baseurl: "/my-blog"
@@ -36,4 +37,3 @@ remote_theme: niklasbuschmann/contrast@v2.11
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
-
