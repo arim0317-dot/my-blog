@@ -1,43 +1,28 @@
-# ---------------------------
-# 기본 사이트 정보
-# ---------------------------
-title: 내 블로그
-description: 여기에 블로그 소개를 적어주세요
-lang: ko
-
-# GitHub Pages 프로젝트 사이트 설정 (arim0317-dot.github.io/my-blog/)
+# 사이트 기본 정보
+title: "내 블로그 제목"
+author: "작성자 이름"
+description: "블로그에 대한 짧은 설명입니다."
 url: "https://arim0317-dot.github.io"
 baseurl: "/my-blog"
 
-# ---------------------------
-# 테마 설정 (beautiful-jekyll)
-# ---------------------------
-remote_theme: daattali/beautiful-jekyll
+# ── 테마 ──
+theme: minima
+
+# ── Minima 세부 옵션 ──
+minima:
+  skin: classic
+  date_format: "%Y년 %m월 %d일"
+
+  social_links:
+    - { platform: github, user_url: "https://github.com/arim0317-dot" }
+    # - { platform: twitter, user_url: "https://twitter.com/아이디" }
+    # - { platform: email,   user_url: "mailto:you@example.com" }
+
+# ── 플러그인 ──
 plugins:
-  - jekyll-remote-theme
-  - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
 
-# ---------------------------
-# 프로필 / 네비게이션
-# ---------------------------
-avatar: ""            # 프로필 이미지 경로, 예: "/assets/img/avatar.png"
-title-img: ""         # 첫 화면 배경 이미지 (없으면 빈 값)
-
-navbar-links:
-  Home: "/"
-  About: "about"
-
-# ---------------------------
-# 소셜 링크 (안 쓰는 항목은 지워도 됨)
-# ---------------------------
-social-network-links:
-  github: arim0317-dot
-  email: your-email@example.com
-
-# ---------------------------
-# 기타
-# ---------------------------
-paginate: 5
+# ── 마크다운/퍼머링크 ──
 markdown: kramdown
+permalink: /:title/
