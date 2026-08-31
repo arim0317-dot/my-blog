@@ -26,3 +26,8 @@ plugins:
 # ── 마크다운/퍼머링크 ──
 markdown: kramdown
 permalink: /:title/
+
+# 커스텀 CSS
+sass:
+  load_paths:
+    - assets
