@@ -1,3 +1,4 @@
+
 title: "아림의 블로그"
 description: "블로그에 대한 짧은 설명입니다."
 url: "https://arim0317-dot.github.io"
@@ -6,8 +7,8 @@ baseurl: "/my-blog"
 author:
   name: "신아림"
 
-# 커스텀 테마 사용 (minima 제거)
-# theme: minima
+# 테마 사용
+theme: minima
 
 plugins:
   - jekyll-feed
