@@ -6,9 +6,8 @@ baseurl: "/my-blog"
 author:
   name: "신아림"
 
-# ❌ theme: jekyll-theme-cayman 이 줄을 삭제하거나 주석 처리
-# ✅ 아래 두 줄로 교체:
-theme: minima
+# 커스텀 테마 사용 (minima 제거)
+# theme: minima
 
 plugins:
   - jekyll-feed
