@@ -1,0 +1,135 @@
+---
+---
+
+/* 고급스러운 프리미엄 블로그 스타일 */
+
+:root {
+  --primary: #1a1a2e;
+  --highlight: #e94560;
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --border-color: #e9ecef;
+}
+
+body {
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  letter-spacing: -0.01em;
+}
+
+.site-header {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.site-title {
+  font-weight: 700;
+  color: var(--primary) !important;
+  letter-spacing: -0.02em;
+}
+
+.site-title:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.site-nav .page-link {
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.site-nav .page-link:hover {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+.post-list {
+  list-style: none;
+}
+
+.post-list li {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.post-list li:hover {
+  padding-left: 8px;
+  border-left: 4px solid var(--highlight);
+}
+
+.post-meta {
+  color: var(--text-secondary);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.post-link {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.post-link:hover {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+.post-content h1, .post-content h2, .post-content h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+.post-content h2 {
+  border-bottom: 2px solid var(--highlight);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-content a {
+  color: var(--highlight);
+  text-decoration: underline;
+  text-decoration-color: var(--border-color);
+  text-underline-offset: 3px;
+}
+
+.post-content a:hover {
+  text-decoration-color: var(--highlight);
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.site-footer {
+  background: linear-gradient(135deg, var(--primary) 0%, #16213e 100%);
+  color: white;
+  border-top: 1px solid var(--border-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #e4e4e7;
+    --text-secondary: #a1a1a1;
+    --bg-primary: #18181b;
+    --bg-secondary: #27272a;
+    --border-color: #3f3f46;
+  }
+
+  body {
+    background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+  }
+
+  .site-header {
+    background: rgba(24, 24, 27, 0.95);
+  }
+}
