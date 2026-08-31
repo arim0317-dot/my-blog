@@ -6,8 +6,9 @@ baseurl: "/my-blog"
 author:
   name: "신아림"
 
-# Cayman 테마 (GitHub Pages 공식 지원)
-theme: jekyll-theme-cayman
+# ❌ theme: jekyll-theme-cayman 이 줄을 삭제하거나 주석 처리
+# ✅ 아래 두 줄로 교체:
+theme: minima
 
 plugins:
   - jekyll-feed
