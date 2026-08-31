@@ -1,26 +1,36 @@
-# 사이트 기본 정보
-title: "아림의 블로그"
-author: "신아림"
-description: "블로그에 대한 짧은 설명입니다."
+title: "내 블로그 제목"
+tagline: "배운 것을 기록하는 공간"
+description: "개발을 배우면서 그날그날 정리한 것을 여기에 쌓습니다."
 url: "https://arim0317-dot.github.io"
 baseurl: "/my-blog"
 
-# ── 테마 ──
-theme: minima
+author:
+  name: "작성자 이름"
+  email: "arim0317@g.eulji.ac.kr"
 
-# ── Minima 세부 옵션 ──
-minima:
-  skin: classic
-  date_format: "%Y년 %m월 %d일"
+remote_theme: cotes2020/jekyll-theme-chirpy@latest
 
-  social_links:
-    - { platform: github, user_url: "https://github.com/arim0317-dot" }
-
-# ── 플러그인 ──
 plugins:
-  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-redirect-from
   - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-sitemap
 
-# ── 마크다운/퍼머링크 ──
+paginate: 10
+
+archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
 markdown: kramdown
-permalink: /:title/
+
+sass:
+  style: compressed
