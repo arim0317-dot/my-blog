@@ -1,36 +1,20 @@
 title: "내 블로그 제목"
-tagline: "배운 것을 기록하는 공간"
-description: "개발을 배우면서 그날그날 정리한 것을 여기에 쌓습니다."
+author: "작성자 이름"
+description: "블로그에 대한 짧은 설명입니다."
 url: "https://arim0317-dot.github.io"
 baseurl: "/my-blog"
 
-author:
-  name: "작성자 이름"
-  email: "arim0317@g.eulji.ac.kr"
+theme: minima
 
-remote_theme: cotes2020/jekyll-theme-chirpy@latest
+minima:
+  skin: dark
+  date_format: "%Y년 %m월 %d일"
+  social_links:
+    - { platform: github, user_url: "https://github.com/arim0317-dot" }
 
 plugins:
-  - jekyll-paginate
-  - jekyll-redirect-from
+  - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-archives
-  - jekyll-sitemap
-
-paginate: 10
-
-archives:
-  enabled:
-    - categories
-    - tags
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
 
 markdown: kramdown
-
-sass:
-  style: compressed
+permalink: /:title/
