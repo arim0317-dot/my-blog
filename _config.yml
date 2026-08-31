@@ -1,16 +1,13 @@
-title: "내 블로그 제목"
-author: "작성자 이름"
+title: "아림의 블로그"
 description: "블로그에 대한 짧은 설명입니다."
 url: "https://arim0317-dot.github.io"
 baseurl: "/my-blog"
 
-theme: minima
+author:
+  name: "신아림"
 
-minima:
-  skin: dark
-  date_format: "%Y년 %m월 %d일"
-  social_links:
-    - { platform: github, user_url: "https://github.com/arim0317-dot" }
+# Cayman 테마 (GitHub Pages 공식 지원)
+theme: jekyll-theme-cayman
 
 plugins:
   - jekyll-feed
