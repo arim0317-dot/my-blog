@@ -1,44 +1,47 @@
-le · SCSS
+
+
 ---
 ---
  
-/* 🎨 프리미엄++ 블로그 스타일 - 고급스럽고 현대적인 완전한 디자인 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+ 
+/* 🎨 감성적이고 세련된 블로그 스타일 */
  
 /* ========== 색상 변수 (Color Palette) ========== */
 :root {
-  /* 주 색상 */
-  --primary: #1a1a2e;
-  --primary-light: #16213e;
-  --primary-dark: #0f3460;
+  /* 주 색상 - 따뜻하고 깔끔한 톤 */
+  --primary: #2d2d44;
+  --primary-light: #3e3e56;
+  --primary-dark: #1a1a28;
  
-  /* 강조색 (그래디언트) */
-  --highlight: #e94560;
-  --highlight-light: #f0597c;
-  --accent: #a8dadc;
+  /* 강조색 - 감성적이고 따뜻한 톤 */
+  --highlight: #c9756a;
+  --highlight-light: #d98c84;
+  --accent: #a8a89c;
  
   /* 보조색 */
-  --success: #2ecc71;
-  --warning: #f39c12;
-  --info: #3498db;
+  --success: #6ba587;
+  --warning: #dbb86f;
+  --info: #7ba8c9;
  
   /* 텍스트 */
-  --text-primary: #2d3436;
-  --text-secondary: #636e72;
-  --text-light: #b2bec3;
+  --text-primary: #3a3a3a;
+  --text-secondary: #6b6b6b;
+  --text-light: #9b9b9b;
  
   /* 배경 */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #ecf0f1;
+  --bg-primary: #fdfbf7;
+  --bg-secondary: #f5f1eb;
+  --bg-tertiary: #ebe7e0;
   --bg-dark: #2c3e50;
  
   /* 테두리 & 그림자 */
-  --border-color: #e9ecef;
-  --border-light: #f0f0f0;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
-  --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.20);
+  --border-color: #e8e3dc;
+  --border-light: #f0ebe4;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.12);
  
   /* 투명도 */
   --opacity-hover: 0.95;
@@ -57,7 +60,7 @@ html {
 }
  
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-primary);
@@ -113,7 +116,7 @@ body {
 }
  
 .page-link {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
   font-size: 14px;
   text-decoration: none;
@@ -138,7 +141,7 @@ body {
  
 .page-link:hover {
   color: white;
-  background: rgba(233, 69, 96, 0.1);
+  background: rgba(201, 117, 106, 0.1);
 }
  
 .page-link:hover::before {
@@ -168,6 +171,54 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+ 
+/* 홈 페이지 인트로 */
+.home > .post-content:first-of-type {
+  background: linear-gradient(135deg, rgba(201, 117, 106, 0.05) 0%, rgba(168, 168, 156, 0.03) 100%);
+  border-left: 4px solid var(--highlight);
+  margin-bottom: 3rem;
+}
+ 
+/* 검색 바 ========== */
+.search-box {
+  margin-bottom: 3rem;
+  animation: slideDown 0.4s ease;
+}
+ 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+.search-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  font-family: 'Noto Sans KR', sans-serif;
+}
+ 
+.search-input:focus {
+  outline: none;
+  border-color: var(--highlight);
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(201, 117, 106, 0.1);
+  transform: translateY(-2px);
+}
+ 
+.search-input::placeholder {
+  color: var(--text-light);
 }
  
 /* 포스트 리스트 */
@@ -239,6 +290,7 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.4;
+  font-family: 'Noto Serif KR', serif;
 }
  
 .post-link:hover {
@@ -254,46 +306,6 @@ body {
   font-size: 15px;
   line-height: 1.7;
   margin-top: 0.75rem;
-}
- 
-/* ========== 검색 바 ========== */
-.search-box {
-  margin-bottom: 3rem;
-  animation: slideDown 0.4s ease;
-}
- 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
- 
-.search-input {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  font-size: 16px;
-  border: 2px solid var(--border-color);
-  border-radius: 12px;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm);
-}
- 
-.search-input:focus {
-  outline: none;
-  border-color: var(--highlight);
-  box-shadow: var(--shadow-md), 0 0 0 3px rgba(233, 69, 96, 0.1);
-  transform: translateY(-2px);
-}
- 
-.search-input::placeholder {
-  color: var(--text-light);
 }
  
 /* ========== 포스트 본문 ========== */
@@ -312,6 +324,7 @@ body {
   color: var(--primary);
   margin: 2rem 0 1rem 0;
   letter-spacing: -0.02em;
+  font-family: 'Noto Serif KR', serif;
 }
  
 .post-content h2 {
@@ -323,6 +336,7 @@ body {
   border-bottom: 3px solid;
   border-image: linear-gradient(90deg, var(--highlight) 0%, var(--accent) 100%) 1;
   letter-spacing: -0.02em;
+  font-family: 'Noto Serif KR', serif;
 }
  
 .post-content h3 {
@@ -331,12 +345,14 @@ body {
   color: var(--primary-light);
   margin: 2rem 0 1rem 0;
   letter-spacing: -0.01em;
+  font-family: 'Noto Serif KR', serif;
 }
  
 .post-content h4, .post-content h5, .post-content h6 {
   font-weight: 700;
   margin: 1.5rem 0 0.75rem 0;
   color: var(--text-primary);
+  font-family: 'Noto Serif KR', serif;
 }
  
 /* 단락 */
@@ -358,7 +374,7 @@ body {
 .post-content a:hover {
   color: var(--primary);
   border-bottom-color: var(--highlight);
-  background: rgba(233, 69, 96, 0.1);
+  background: rgba(201, 117, 106, 0.1);
   padding: 2px 4px;
   border-radius: 4px;
 }
@@ -633,39 +649,39 @@ body {
 /* ========== 다크 모드 ========== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-primary: #ecf0f1;
-    --text-secondary: #bdc3c7;
-    --text-light: #7f8c8d;
-    --bg-primary: #1a1a2e;
-    --bg-secondary: #16213e;
-    --bg-tertiary: #0f3460;
+    --text-primary: #e8e8e8;
+    --text-secondary: #b8b8b8;
+    --text-light: #888888;
+    --bg-primary: #1a1a1f;
+    --bg-secondary: #252530;
+    --bg-tertiary: #363645;
     --bg-dark: #ffffff;
-    --border-color: #2c3e50;
-    --border-light: #34495e;
+    --border-color: #363645;
+    --border-light: #454555;
   }
  
   body {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, #1a1a1f 0%, #252530 100%);
   }
  
   .post-list li {
-    background: #16213e;
-    border-color: #2c3e50;
+    background: #252530;
+    border-color: #363645;
   }
  
   .post-content {
-    background: #16213e;
+    background: #252530;
     color: var(--text-primary);
   }
  
   .search-input {
-    background: #16213e;
-    border-color: #2c3e50;
+    background: #252530;
+    border-color: #363645;
     color: var(--text-primary);
   }
  
   .search-input:focus {
-    box-shadow: var(--shadow-md), 0 0 0 3px rgba(233, 69, 96, 0.2);
+    box-shadow: var(--shadow-md), 0 0 0 3px rgba(201, 117, 106, 0.2);
   }
 }
  
@@ -686,3 +702,4 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
 }
+ 
