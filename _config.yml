@@ -1,33 +1,17 @@
 # 사이트 기본 정보
-title: "내 블로그 제목"
-author: "작성자 이름"
+title: "아림의 블로그"
+author: "신아림"
 description: "블로그에 대한 짧은 설명입니다."
 url: "https://arim0317-dot.github.io"
 baseurl: "/my-blog"
 
-# ── 테마 ──
-theme: minima
+# 테마 - 간단한 테마로 변경
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
-# ── Minima 세부 옵션 ──
-minima:
-  skin: classic
-  date_format: "%Y년 %m월 %d일"
-
-  social_links:
-    - { platform: github, user_url: "https://github.com/arim0317-dot" }
-    # - { platform: twitter, user_url: "https://twitter.com/아이디" }
-    # - { platform: email,   user_url: "mailto:you@example.com" }
-
-# ── 플러그인 ──
+# 플러그인
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# ── 마크다운/퍼머링크 ──
+# 마크다운
 markdown: kramdown
-permalink: /:title/
-
-# 커스텀 CSS
-sass:
-  load_paths:
-    - assets
