@@ -5,13 +5,22 @@ description: "블로그에 대한 짧은 설명입니다."
 url: "https://arim0317-dot.github.io"
 baseurl: "/my-blog"
 
-# 테마 - 간단한 테마로 변경
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+# ── 테마 ──
+theme: minima
 
-# 플러그인
+# ── Minima 세부 옵션 ──
+minima:
+  skin: classic
+  date_format: "%Y년 %m월 %d일"
+
+  social_links:
+    - { platform: github, user_url: "https://github.com/arim0317-dot" }
+
+# ── 플러그인 ──
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# 마크다운
+# ── 마크다운/퍼머링크 ──
 markdown: kramdown
+permalink: /:title/
