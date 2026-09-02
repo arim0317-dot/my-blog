@@ -16,3 +16,12 @@ plugins:
 
 markdown: kramdown
 permalink: /:title/
+
+# Mermaid 다이어그램 지원
+mermaid:
+  version: latest
+
+# 건너뛸 파일
+exclude:
+  - .gitignore
+  - README.md
