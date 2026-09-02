@@ -10,9 +10,9 @@ author:
 # 테마 사용
 theme: minima
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+# plugins 비활성화
+# plugins:
+#   - jekyll-seo-tag
 
 markdown: kramdown
 permalink: /:title/
