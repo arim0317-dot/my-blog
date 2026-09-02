@@ -5,8 +5,8 @@
 title: "아림의 학습 블로그"
 author: "신아림"
 
-url: "https://arim0317.github.io"
-baseurl: ""
+url: "https://arim0317-dot.github.io"
+baseurl: "/my-blog"
 
 # RSS feed 설명 (https://<url>/feed.xml)
 rss-description: "개발을 배우며 정리하는 학습 블로그"
