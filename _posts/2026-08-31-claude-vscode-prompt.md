@@ -1,7 +1,11 @@
 ---
 layout: post
-title: "지금까지 배운 것 정리 + 오늘 배운 것: Claude와 VSCode, 그리고 질문하는 법"
-date: 2026-08-31
+title: "Claude와 VSCode 프롬프트 활용하기"
+date: 2026-08-31 10:00:00 +0900
+category: "개발 도구"
+tags: [Claude, VSCode, AI, 프롬프트]
+excerpt: "Claude를 VSCode에서 효율적으로 사용하는 방법"
+toc: true
 ---
 
 오늘은 새로운 걸 두 가지 배웠다. **Claude를 VSCode랑 같이 쓰는 법**, 그리고

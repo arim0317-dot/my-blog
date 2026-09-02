@@ -1,27 +1,29 @@
-
-title: "아림의 블로그"
+title: "아림의 학습 블로그"
 description: "개발을 배우며 그날그날 정리한 것을 기록하는 아림의 학습 블로그입니다."
-url: "https://arim0317-dot.github.io"
-baseurl: "/my-blog"
+url: "https://arim0317.github.io"
+baseurl: "/my-blog"  # 또는 "/my-blog" (배포 위치에 따라)
 
 author:
   name: "신아림"
+  email: "arim0317@g.eulji.ac.kr"
 
-# 테마 사용
-theme: minima
-
-# plugins 비활성화
-# plugins:
-#   - jekyll-seo-tag
-
+theme: jekyll-theme-minimal
 markdown: kramdown
-permalink: /:title/
+permalink: /:year/:month/:day/:title/
 
-# Mermaid 다이어그램 지원
-mermaid:
-  version: latest
+# 블로그 기능
+show_excerpts: true
+paginate: 10
+paginate_path: "/page:num/"
 
-# 건너뛸 파일
+# 플러그인
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# 제외할 파일
 exclude:
   - .gitignore
   - README.md
+  - CLAUDE.md
+  - .claude
