@@ -1,15 +1,110 @@
+############################
+# --- Required options --- #
+############################
+
 title: "아림의 학습 블로그"
-description: "개발을 배우며 정리하는 학습 블로그"
+author: "신아림"
+
 url: "https://arim0317.github.io"
 baseurl: ""
 
-author:
-  name: "신아림"
+# RSS feed 설명 (https://<url>/feed.xml)
+rss-description: "개발을 배우며 정리하는 학습 블로그"
+
+###############################################
+# --- List of links in the navigation bar --- #
+###############################################
+
+# 아직 별도 페이지(About 등)가 없어서 비워둠. 페이지를 추가하면 여기에 링크를 추가한다.
+# navbar-links:
+#   About Me: "aboutme"
+
+################
+# --- Logo --- #
+################
+
+# 아바타 이미지를 assets/img/avatar.jpg 에 추가한 뒤 아래 줄의 주석을 해제하면 네비게이션 바에 표시된다.
+# avatar: "/assets/img/avatar.jpg"
+# round-avatar: true
+
+#####################################
+# --- Footer social media links --- #
+#####################################
+
+# 소셜 링크를 추가하고 싶으면 아래 형식으로 주석을 해제한다.
+# social-network-links:
+#   email: "arim0317@g.eulji.ac.kr"
+#   github: arim0317-dot
+
+###########################
+# --- General options --- #
+###########################
+
+# 게시글 피드에 보여줄 발췌문 길이 (단어 수)
+excerpt_length: 50
+feed_show_excerpt: true
+feed_show_tags: true
+
+# 네비게이션 바에 검색 버튼 추가
+post_search: true
+
+# GitHub에 호스팅된 페이지에 "이 페이지 수정" 버튼 추가
+edit_page_button: true
+
+######################################
+# --- Colours / background image --- #
+######################################
+
+page-col: "#FFFFFF"
+text-col: "#2c2c2c"
+link-col: "#c0392b"
+hover-col: "#8e2a1f"
+navbar-col: "#f9f5f0"
+navbar-text-col: "#2c2c2c"
+navbar-border-col: "#e8dfd3"
+footer-col: "#3d3d52"
+footer-text-col: "#dddddd"
+footer-link-col: "#ffffff"
+footer-hover-col: "#e89584"
+
+##########################################
+# --- Jekyll / Beautiful Jekyll setup --- #
+##########################################
+
+remote_theme: "daattali/beautiful-jekyll@6.0.1"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: rouge
 permalink: /:year/:month/:day/:title/
+paginate: 10
+
+date_format: "%Y-%m-%d"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false
+      social-share: true
+  -
+    scope:
+      path: ""
+    values:
+      layout: "page"
 
 exclude:
   - .gitignore
   - README.md
   - CLAUDE.md
+  - .claude
