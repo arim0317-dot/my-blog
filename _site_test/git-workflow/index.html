@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%93%9D</text></svg>">
+    <link rel="stylesheet" href="/my-blog/assets/css/style.css">
+    <link type="application/atom+xml" rel="alternate" href="https://arim0317-dot.github.io/my-blog/feed.xml" title="아림의 블로그" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>이번 주 배운 Git 명령어 정리 | 아림의 블로그</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="이번 주 배운 Git 명령어 정리" />
+<meta name="author" content="신아림" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="이번 주에는 저장소 만들기 → 스테이징 → 커밋 → 브랜치 → push/pull → merge → 되돌리기까지, Git으로 코드를 관리하는 전체 흐름을 배웠다. 오늘은 이걸 한 번에 정리해본다." />
+<meta property="og:description" content="이번 주에는 저장소 만들기 → 스테이징 → 커밋 → 브랜치 → push/pull → merge → 되돌리기까지, Git으로 코드를 관리하는 전체 흐름을 배웠다. 오늘은 이걸 한 번에 정리해본다." />
+<link rel="canonical" href="https://arim0317-dot.github.io/my-blog/git-workflow/" />
+<meta property="og:url" content="https://arim0317-dot.github.io/my-blog/git-workflow/" />
+<meta property="og:site_name" content="아림의 블로그" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-08-31T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="이번 주 배운 Git 명령어 정리" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"신아림"},"dateModified":"2026-08-31T00:00:00+09:00","datePublished":"2026-08-31T00:00:00+09:00","description":"이번 주에는 저장소 만들기 → 스테이징 → 커밋 → 브랜치 → push/pull → merge → 되돌리기까지, Git으로 코드를 관리하는 전체 흐름을 배웠다. 오늘은 이걸 한 번에 정리해본다.","headline":"이번 주 배운 Git 명령어 정리","mainEntityOfPage":{"@type":"WebPage","@id":"https://arim0317-dot.github.io/my-blog/git-workflow/"},"url":"https://arim0317-dot.github.io/my-blog/git-workflow/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a class="site-title" href="/my-blog/">아림의 블로그</a>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">이번 주 배운 Git 명령어 정리</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2026-08-31T00:00:00+09:00" itemprop="datePublished">Aug 31, 2026
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>이번 주에는 <strong>저장소 만들기 → 스테이징 → 커밋 → 브랜치 → push/pull → merge → 되돌리기</strong>까지,
+Git으로 코드를 관리하는 전체 흐름을 배웠다. 오늘은 이걸 한 번에 정리해본다.</p>
+
+<h2 id="1-전체-흐름-한눈에-보기">1. 전체 흐름 한눈에 보기</h2>
+
+<p>Git 작업은 크게 네 개의 공간을 왔다 갔다 하는 일이다.</p>
+
+<ul>
+  <li><strong>작업 폴더</strong>: 내가 실제로 파일을 고치는 곳</li>
+  <li><strong>스테이징 영역</strong>: 다음 커밋에 담을 파일을 골라두는 곳</li>
+  <li><strong>Local Repository</strong>: 커밋(저장 기록)이 쌓이는, 내 컴퓨터 안의 저장소</li>
+  <li><strong>원격 저장소(GitHub)</strong>: 인터넷에 올라가 있는 저장소</li>
+</ul>
+
+<pre><code class="language-mermaid">flowchart LR
+    A[작업 폴더] -- git add --&gt; B[스테이징 영역]
+    B -- git commit --&gt; C[Local Repository]
+    C -- git push --&gt; D[원격 저장소 GitHub]
+    D -- git pull --&gt; A
+</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>명령어</th>
+      <th>언제 쓰나</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git init</code></td>
+      <td>폴더를 Git 저장소로 처음 만들 때</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git add</code></td>
+      <td>커밋에 담을 파일을 스테이징 영역에 올릴 때</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git commit</code></td>
+      <td>스테이징된 내용을 Local Repository에 기록으로 남길 때</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git branch</code></td>
+      <td>새로운 브랜치를 만들거나 목록을 볼 때</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git push</code></td>
+      <td>Local Repository의 기록을 GitHub로 올릴 때</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git pull</code></td>
+      <td>GitHub의 최신 기록을 내 컴퓨터로 받아올 때</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git merge</code></td>
+      <td>다른 브랜치의 내용을 지금 브랜치로 합칠 때</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git reset</code></td>
+      <td>스테이징하거나 커밋한 것을 되돌리고 싶을 때</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="2-저장소-만들기">2. 저장소 만들기</h2>
+
+<p><code class="language-plaintext highlighter-rouge">git init</code>은 지금 폴더를 “Git이 관리하는 폴더”로 선언하는 명령이다.
+이걸 해야만 add, commit 같은 다른 명령들이 의미를 가진다.</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    A[그냥 평범한 폴더] -- git init --&gt; B[Git 저장소]
+</code></pre>
+
+<h2 id="3-스테이징">3. 스테이징</h2>
+
+<p>파일을 두 개 고쳐도 그중 하나만 커밋하고 싶을 때가 있다.
+그래서 Git은 “커밋하기 전에 담을 것부터 고르는” 단계를 따로 둔다. 이게 스테이징이다.</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    A["파일 수정 (a.md, b.md)"] -- "git add a.md" --&gt; B["스테이징 영역 (a.md만 담김)"]
+</code></pre>
+
+<h2 id="4-local-repository와-커밋">4. Local Repository와 커밋</h2>
+
+<p><code class="language-plaintext highlighter-rouge">git commit</code>을 하면 스테이징된 내용이 하나의 기록(스냅샷)으로 Local Repository에 저장된다.
+Local Repository는 이런 기록들이 시간 순서대로 쌓여 있는, 내 컴퓨터 안의 저장소다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>개념</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>스테이징 영역</td>
+      <td>커밋 직전에 담을 파일을 잠깐 모아두는 곳</td>
+    </tr>
+    <tr>
+      <td>Local Repository</td>
+      <td>커밋(기록)들이 실제로 저장되는 곳</td>
+    </tr>
+    <tr>
+      <td>커밋</td>
+      <td>“지금 상태를 하나의 기록으로 남긴다”는 행동</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code class="language-mermaid">flowchart LR
+    A[스테이징 영역] -- git commit --&gt; B((커밋 1))
+    B --&gt; C((커밋 2))
+    C --&gt; D((커밋 3))
+    subgraph Local Repository
+    B
+    C
+    D
+    end
+</code></pre>
+
+<h2 id="5-브랜치">5. 브랜치</h2>
+
+<p>브랜치는 “지금 상태에서 갈라져 나온 또 다른 작업 줄기”다.
+기존 코드를 건드리지 않고 새 기능을 실험해보고 싶을 때 브랜치를 만든다.</p>
+
+<pre><code class="language-mermaid">gitGraph
+    commit id: "커밋 1"
+    commit id: "커밋 2"
+    branch new-feature
+    checkout new-feature
+    commit id: "커밋 3"
+</code></pre>
+
+<h2 id="6-push와-pull">6. push와 pull</h2>
+
+<p><code class="language-plaintext highlighter-rouge">push</code>는 내 Local Repository의 기록을 GitHub로 올리는 것이고,
+<code class="language-plaintext highlighter-rouge">pull</code>은 반대로 GitHub의 최신 기록을 내 컴퓨터로 받아오는 것이다.</p>
+
+<pre><code class="language-mermaid">flowchart TB
+    subgraph 내 컴퓨터
+    L[Local Repository]
+    end
+    subgraph 인터넷
+    R[GitHub 원격 저장소]
+    end
+    L -- git push --&gt; R
+    R -- git pull --&gt; L
+</code></pre>
+
+<h2 id="7-merge">7. merge</h2>
+
+<p>merge는 브랜치에서 따로 진행한 작업을 원래 브랜치로 합치는 것이다.
+예를 들어 new-feature 브랜치에서 만든 커밋을 main 브랜치로 가져오고 싶을 때 쓴다.</p>
+
+<pre><code class="language-mermaid">gitGraph
+    commit id: "커밋 1"
+    commit id: "커밋 2"
+    branch new-feature
+    checkout new-feature
+    commit id: "커밋 3"
+    checkout main
+    merge new-feature id: "merge"
+</code></pre>
+
+<h2 id="8-되돌리기">8. 되돌리기</h2>
+
+<p>실수로 파일을 잘못 스테이징했거나, 아직 push하지 않은 커밋을 취소하고 싶을 때 <code class="language-plaintext highlighter-rouge">git reset</code>을 쓴다.
+Local Repository 안에서만 벌어지는 일을 되돌리는 명령이라고 생각하면 된다.</p>
+
+<pre><code class="language-mermaid">flowchart LR
+    A[스테이징 또는 커밋한 상태] -- git reset --&gt; B[되돌린 상태]
+</code></pre>
+
+<h2 id="오늘-정리하며-느낀-것">오늘 정리하며 느낀 것</h2>
+
+<p>이번 주 흐름을 한 문장으로 요약하면:</p>
+
+<blockquote>
+  <p>파일을 고치고(작업 폴더) → 담을 것을 고르고(스테이징) → 기록으로 남기고(커밋, Local Repository) →
+필요하면 갈라져서 작업하고(브랜치) → 합치고(merge) → 인터넷에 올리고 받아오고(push, pull) →
+잘못됐으면 되돌린다(되돌리기).</p>
+</blockquote>
+
+<p>이 순서만 기억하면 이번 주에 배운 명령어는 거의 다 설명이 된다.</p>
+
+  </div><a class="u-url" href="/my-blog/git-workflow/" hidden></a>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>소개</h3>
+                <p>개발을 배우며 그날그날 정리한 것을 기록하는 아림의 학습 블로그입니다.</p>
+            </div>
+            <div class="footer-section">
+                <h3>바로가기</h3>
+                <p><a href="/my-blog/">홈</a></p>
+                <p><a href="/my-blog/feed.xml">RSS 구독</a></p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/arim0317-dot" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+            <a href="/my-blog/feed.xml" aria-label="RSS">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2a1 1 0 0 1 1-1c6.075 0 11 4.925 11 11a1 1 0 1 1-2 0 9 9 0 0 0-9-9 1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1zm2.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+            </a>
+        </div>
+        <p>&copy; 2026 신아림</p>
+    </footer>
+</body>
+</html>

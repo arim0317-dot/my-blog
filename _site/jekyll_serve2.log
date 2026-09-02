@@ -1,0 +1,8 @@
+bundler: failed to load command: jekyll (C:/Ruby40-x64/bin/jekyll)
+C:/Ruby40-x64/lib/ruby/gems/4.0.0/gems/mercenary-0.4.0/lib/mercenary/program.rb:33:in 'Mercenary::Program#go': needless argument: --skip-initial-build=false (OptionParser::NeedlessArgument)
+	from C:/Ruby40-x64/lib/ruby/gems/4.0.0/gems/mercenary-0.4.0/lib/mercenary.rb:21:in 'Mercenary.program'
+	from C:/Ruby40-x64/lib/ruby/gems/4.0.0/gems/jekyll-4.3.4/exe/jekyll:15:in '<top (required)>'
+	from C:/Ruby40-x64/bin/jekyll:25:in '<top (required)>'
+	from C:/Ruby40-x64/lib/ruby/gems/4.0.0/gems/bundler-4.0.16/exe/bundle:28:in 'block in <top (required)>'
+	from C:/Ruby40-x64/lib/ruby/gems/4.0.0/gems/bundler-4.0.16/exe/bundle:20:in '<top (required)>'
+	from C:/Ruby40-x64/bin/bundle:33:in '<main>'

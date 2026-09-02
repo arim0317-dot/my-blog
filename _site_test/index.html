@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%93%9D</text></svg>">
+    <link rel="stylesheet" href="/my-blog/assets/css/style.css">
+    <link type="application/atom+xml" rel="alternate" href="https://arim0317-dot.github.io/my-blog/feed.xml" title="아림의 블로그" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>학습 노트 | 아림의 블로그</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="학습 노트" />
+<meta name="author" content="신아림" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="개발을 배우며 그날그날 정리한 것을 기록하는 아림의 학습 블로그입니다." />
+<meta property="og:description" content="개발을 배우며 그날그날 정리한 것을 기록하는 아림의 학습 블로그입니다." />
+<link rel="canonical" href="https://arim0317-dot.github.io/my-blog/" />
+<meta property="og:url" content="https://arim0317-dot.github.io/my-blog/" />
+<meta property="og:site_name" content="아림의 블로그" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="학습 노트" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"신아림"},"description":"개발을 배우며 그날그날 정리한 것을 기록하는 아림의 학습 블로그입니다.","headline":"학습 노트","name":"아림의 블로그","url":"https://arim0317-dot.github.io/my-blog/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a class="site-title" href="/my-blog/">아림의 블로그</a>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="home"><h1 class="page-heading">학습 노트</h1><div class="home-intro">
+  <h2>안녕하세요, 아림입니다 👋</h2>
+  <p>개발을 배우면서 그날그날 정리한 것을 여기에 쌓습니다.</p>
+
+  <div class="progress-items">
+    <div class="progress-item">
+      <span class="label">배운 것</span>
+      <span class="value">Git, GitHub, 마크다운</span>
+    </div>
+    <div class="progress-item">
+      <span class="label">지금 하는 것</span>
+      <span class="value">부트캠프 진행 중</span>
+    </div>
+  </div>
+</div>
+
+<div class="search-box">
+  <input type="text" id="searchInput" class="search-input" placeholder="글 검색하기... (제목으로 검색 가능)" />
+  <div id="searchResults" class="search-results"></div>
+</div>
+
+<style>
+.progress-items {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.progress-item {
+  background: linear-gradient(135deg, rgba(201, 117, 106, 0.08) 0%, rgba(168, 168, 156, 0.05) 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--highlight);
+  flex: 1;
+  min-width: 200px;
+}
+
+.progress-item .label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.progress-item .value {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+  font-family: 'Noto Serif KR', serif;
+}
+
+.home-intro {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.home-intro h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Noto Serif KR', serif;
+  margin-bottom: 1rem;
+}
+
+.home-intro p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.search-results {
+  margin-top: 2rem;
+}
+
+.search-results.hidden {
+  display: none;
+}
+
+.search-result-item {
+  background: var(--bg-primary);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--highlight);
+  transition: all 0.3s ease;
+}
+
+.search-result-item:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.search-result-item a {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  font-family: 'Noto Serif KR', serif;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--highlight) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.search-result-item .date {
+  display: block;
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-light);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  const postList = document.querySelector('.post-list');
+
+  if (!searchInput || !postList) return;
+
+  const posts = [];
+  postList.querySelectorAll('li').forEach(item => {
+    const titleElement = item.querySelector('.post-link');
+    const dateElement = item.querySelector('.post-meta');
+    if (titleElement) {
+      posts.push({
+        title: titleElement.textContent.trim(),
+        url: titleElement.href,
+        date: dateElement ? dateElement.textContent.trim() : '',
+        element: item
+      });
+    }
+  });
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+
+    if (query.length === 0) {
+      // 검색 결과 숨기기
+      searchResults.classList.add('hidden');
+      searchResults.innerHTML = '';
+      postList.style.display = 'grid';
+      return;
+    }
+
+    // 검색 필터링
+    const filtered = posts.filter(post =>
+      post.title.toLowerCase().includes(query) ||
+      post.date.toLowerCase().includes(query)
+    );
+
+    if (filtered.length === 0) {
+      searchResults.classList.remove('hidden');
+      searchResults.innerHTML = '<div class="no-results">검색 결과가 없습니다.</div>';
+      postList.style.display = 'none';
+      return;
+    }
+
+    // 검색 결과 표시
+    searchResults.classList.remove('hidden');
+    searchResults.innerHTML = filtered.map(post => `
+      <div class="search-result-item">
+        <a href="${post.url}">${post.title}</a>
+        <span class="date">${post.date}</span>
+      </div>
+    `).join('');
+
+    postList.style.display = 'none';
+  });
+});
+</script>
+
+<h2 class="post-list-heading">지금까지 쓴 글</h2>
+    <ul class="post-list"><li><span class="post-meta">Aug 31, 2026</span>
+        <h3>
+          <a class="post-link" href="/my-blog/github-remote/">
+            GitHub 원격 저장소 연결하기
+          </a>
+        </h3></li><li><span class="post-meta">Aug 31, 2026</span>
+        <h3>
+          <a class="post-link" href="/my-blog/git-workflow/">
+            이번 주 배운 Git 명령어 정리
+          </a>
+        </h3></li><li><span class="post-meta">Aug 31, 2026</span>
+        <h3>
+          <a class="post-link" href="/my-blog/git-pull-push-conflict/">
+            push 하기 전에 pull 안 해서 겪은 git 충돌
+          </a>
+        </h3></li><li><span class="post-meta">Aug 31, 2026</span>
+        <h3>
+          <a class="post-link" href="/my-blog/claude-vscode-prompt/">
+            지금까지 배운 것 정리 + 오늘 배운 것: Claude와 VSCode, 그리고 질문하는 법
+          </a>
+        </h3></li><li><span class="post-meta">Aug 28, 2026</span>
+        <h3>
+          <a class="post-link" href="/my-blog/git-github/">
+            Git Github
+          </a>
+        </h3></li></ul>
+
+    <p class="rss-subscribe">subscribe <a href="/my-blog/feed.xml">via RSS</a></p></div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>소개</h3>
+                <p>개발을 배우며 그날그날 정리한 것을 기록하는 아림의 학습 블로그입니다.</p>
+            </div>
+            <div class="footer-section">
+                <h3>바로가기</h3>
+                <p><a href="/my-blog/">홈</a></p>
+                <p><a href="/my-blog/feed.xml">RSS 구독</a></p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/arim0317-dot" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+            <a href="/my-blog/feed.xml" aria-label="RSS">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2a1 1 0 0 1 1-1c6.075 0 11 4.925 11 11a1 1 0 1 1-2 0 9 9 0 0 0-9-9 1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1zm2.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+            </a>
+        </div>
+        <p>&copy; 2026 신아림</p>
+    </footer>
+</body>
+</html>
