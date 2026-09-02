@@ -24,5 +24,3 @@ list_title: 지금까지 쓴 글
   <input type="text" id="searchInput" class="search-input" placeholder="글 검색하기... (제목으로 검색 가능)" />
   <div id="searchResults" class="search-results"></div>
 </div>
-
-{% include search.html %}
