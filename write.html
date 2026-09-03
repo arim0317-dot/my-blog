@@ -1,0 +1,71 @@
+---
+layout: page
+title: 새 글 작성
+subtitle: 형식에 맞는 포스트 파일을 자동으로 만들어드려요
+permalink: /write/
+css:
+  - "/assets/css/write.css"
+js:
+  - "/assets/js/write.js"
+---
+
+<div class="write-tool">
+  <div class="write-form">
+    <div class="write-field">
+      <label for="post-title">제목</label>
+      <input type="text" id="post-title" placeholder="예) push 하기 전에 pull 안 해서 겪은 git 충돌">
+    </div>
+
+    <div class="write-row">
+      <div class="write-field write-field-narrow">
+        <label for="post-date">날짜</label>
+        <input type="date" id="post-date">
+      </div>
+      <div class="write-field write-field-narrow">
+        <label for="post-time">시간</label>
+        <input type="time" id="post-time" step="60">
+      </div>
+    </div>
+
+    <div class="write-field">
+      <label for="post-body">본문 <span class="write-hint">(STAR 구조로 미리 채워뒀어요 — 그대로 채워나가면 됩니다)</span></label>
+      <textarea id="post-body" rows="18"></textarea>
+    </div>
+
+    <div class="write-actions">
+      <button type="button" id="generate-btn">파일 만들기</button>
+      <span id="write-error" class="write-error" role="alert"></span>
+    </div>
+  </div>
+
+  <div class="write-output" id="write-output" hidden>
+    <div class="write-output-head">
+      <div>
+        <p class="write-output-label">파일명</p>
+        <p class="write-filename" id="write-filename"></p>
+      </div>
+      <div class="write-output-buttons">
+        <button type="button" id="copy-btn">복사</button>
+        <button type="button" id="download-btn">.md 파일 다운로드</button>
+      </div>
+    </div>
+    <textarea id="write-result" readonly rows="22"></textarea>
+    <p class="write-output-note">
+      다운로드한 파일을 <code>_posts/</code> 폴더에 넣고 <code>git add · commit · push</code> 하면 게시됩니다.
+    </p>
+  </div>
+
+  <details class="write-checklist">
+    <summary>게시 전 셀프 체크리스트</summary>
+    <ul>
+      <li>STAR 구조(상황 · 과제 · 행동 · 결과)를 따르고 있는가?</li>
+      <li>해결 과정(Action)이 글의 중심인가?</li>
+      <li>기술 선택의 "왜"가 설명되어 있는가?</li>
+      <li>비교/정리가 필요한 부분에 표를 사용했는가?</li>
+      <li>흐름 설명에 Mermaid 다이어그램을 사용했는가?</li>
+      <li>"더 학습하면 좋은 개념" 섹션이 있는가?</li>
+      <li>공식 문서 링크가 참고 자료에 포함되어 있는가?</li>
+      <li>결과에 정량적 지표가 있는가?</li>
+    </ul>
+  </details>
+</div>

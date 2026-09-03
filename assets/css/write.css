@@ -1,0 +1,191 @@
+.write-tool {
+  max-width: 46rem;
+  margin: 0 auto 3rem;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.write-field {
+  margin-bottom: 1.25rem;
+}
+
+.write-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.write-row .write-field {
+  flex: 2 1 14rem;
+}
+
+.write-field-narrow {
+  flex: 1 1 9rem !important;
+}
+
+.write-tool label {
+  display: block;
+  font-weight: 700;
+  font-size: .9rem;
+  color: #2c2c2c;
+  margin-bottom: .4rem;
+}
+
+.write-hint {
+  font-weight: 400;
+  color: #999;
+  font-size: .8rem;
+}
+
+.write-tool input[type="text"],
+.write-tool input[type="date"],
+.write-tool input[type="time"],
+.write-tool textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: .6rem .75rem;
+  border: 1px solid #e8dfd3;
+  border-radius: .35rem;
+  font-family: inherit;
+  font-size: .95rem;
+  color: #2c2c2c;
+  background: #fff;
+}
+
+.write-tool textarea {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: .85rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.write-tool input:focus,
+.write-tool textarea:focus {
+  outline: none;
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, .15);
+}
+
+.write-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.write-checkbox input {
+  width: auto;
+}
+
+.write-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.write-tool button {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: .9rem;
+  border: none;
+  border-radius: .35rem;
+  padding: .7rem 1.4rem;
+  cursor: pointer;
+  background-color: #c0392b;
+  color: #fff;
+  transition: background-color .2s ease;
+}
+
+.write-tool button:hover {
+  background: #8e2a1f;
+}
+
+.write-output-buttons button {
+  background: #2c2c2c;
+  padding: .5rem 1rem;
+  font-size: .8rem;
+  margin-left: .5rem;
+}
+
+.write-output-buttons button:hover {
+  background: #000;
+}
+
+.write-error {
+  color: #c0392b;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.write-output {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e8dfd3;
+}
+
+.write-output-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: .75rem;
+}
+
+.write-output-label {
+  font-size: .75rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 .2rem;
+}
+
+.write-filename {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+#write-result {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: .82rem;
+  background: #faf7f3;
+}
+
+.write-output-note {
+  font-size: .85rem;
+  color: #777;
+  margin-top: .75rem;
+}
+
+.write-output-note code {
+  background: #f1ece4;
+  padding: .1rem .35rem;
+  border-radius: .25rem;
+}
+
+.write-checklist {
+  margin-top: 2.5rem;
+  padding: 1rem 1.25rem;
+  background: #faf7f3;
+  border-radius: .5rem;
+  border: 1px solid #e8dfd3;
+}
+
+.write-checklist summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+.write-checklist ul {
+  margin: .9rem 0 0;
+  padding-left: 1.2rem;
+  color: #555;
+  font-size: .9rem;
+  line-height: 1.8;
+}

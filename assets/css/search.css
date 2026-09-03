@@ -1,0 +1,57 @@
+/* Restyle the theme's default search overlay to match the blog's warm editorial palette */
+
+#beautifuljekyll-search-overlay {
+  background: rgba(27, 27, 27, .94);
+  backdrop-filter: blur(2px);
+  padding-top: 8vh;
+}
+
+#nav-search-exit {
+  top: 2rem;
+  color: rgba(255, 255, 255, .55);
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  transition: color .2s ease;
+}
+
+#nav-search-exit:hover {
+  color: #fff;
+}
+
+#nav-search-input {
+  background: #f9f5f0;
+  color: #2c2c2c;
+  font-size: 1.5rem;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  max-width: 40rem;
+  padding: .75rem 2rem;
+  border: 1px solid transparent;
+  transition: box-shadow .25s ease, background .25s ease;
+}
+
+#nav-search-input::placeholder {
+  color: #9a9a9a;
+}
+
+#nav-search-input:focus {
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, .35);
+}
+
+#search-results-container {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.15rem;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search-results-container a {
+  color: #f2e9e4;
+}
+
+#search-results-container a:hover {
+  color: #e89584;
+  text-decoration: underline;
+}

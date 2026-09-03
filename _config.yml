@@ -15,17 +15,16 @@ rss-description: "개발을 배우며 정리하는 학습 블로그"
 # --- List of links in the navigation bar --- #
 ###############################################
 
-# 아직 별도 페이지(About 등)가 없어서 비워둠. 페이지를 추가하면 여기에 링크를 추가한다.
-# navbar-links:
-#   About Me: "aboutme"
+navbar-links:
+  글쓰기: "/write/"
 
 ################
 # --- Logo --- #
 ################
 
-# 아바타 이미지를 assets/img/avatar.jpg 에 추가한 뒤 아래 줄의 주석을 해제하면 네비게이션 바에 표시된다.
+# 프로필 사진을 assets/img/avatar.jpg 로 추가한 뒤 아래 줄의 주석을 해제하면
+# 홈 화면의 "전체 글" 사이드바에 있는 프로필 카드에 표시된다. (설정 전까지는 이니셜 원형이 대신 보인다)
 # avatar: "/assets/img/avatar.jpg"
-# round-avatar: true
 
 #####################################
 # --- Footer social media links --- #
@@ -47,6 +46,10 @@ feed_show_tags: true
 
 # 네비게이션 바에 검색 버튼 추가
 post_search: true
+
+# 검색창 등 모든 페이지에 공통으로 적용할 스타일
+site-css:
+  - "/assets/css/search.css"
 
 # GitHub에 호스팅된 페이지에 "이 페이지 수정" 버튼 추가
 edit_page_button: true
