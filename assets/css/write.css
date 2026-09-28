@@ -43,7 +43,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: .6rem .75rem;
-  border: 1px solid #e8dfd3;
+  border: 1px solid #dcdcdc;
   border-radius: .35rem;
   font-family: inherit;
   font-size: .95rem;
@@ -61,8 +61,8 @@
 .write-tool input:focus,
 .write-tool textarea:focus {
   outline: none;
-  border-color: #c0392b;
-  box-shadow: 0 0 0 3px rgba(192, 57, 43, .15);
+  border-color: #6c4fd1;
+  box-shadow: 0 0 0 3px rgba(108, 79, 209, .15);
 }
 
 .write-checkbox label {
@@ -94,13 +94,13 @@
   border-radius: .35rem;
   padding: .7rem 1.4rem;
   cursor: pointer;
-  background-color: #c0392b;
+  background-color: #6c4fd1;
   color: #fff;
   transition: background-color .2s ease;
 }
 
 .write-tool button:hover {
-  background: #8e2a1f;
+  background: #4f39a3;
 }
 
 .write-output-buttons button {
@@ -115,7 +115,7 @@
 }
 
 .write-error {
-  color: #c0392b;
+  color: #6c4fd1;
   font-size: .85rem;
   font-weight: 700;
 }
@@ -123,7 +123,7 @@
 .write-output {
   margin-top: 2.5rem;
   padding-top: 2rem;
-  border-top: 1px solid #e8dfd3;
+  border-top: 1px solid #dcdcdc;
 }
 
 .write-output-head {
@@ -153,7 +153,7 @@
 #write-result {
   font-family: "SFMono-Regular", Consolas, monospace;
   font-size: .82rem;
-  background: #faf7f3;
+  background: #f5f5f5;
 }
 
 .write-output-note {
@@ -171,9 +171,9 @@
 .write-checklist {
   margin-top: 2.5rem;
   padding: 1rem 1.25rem;
-  background: #faf7f3;
+  background: #f5f5f5;
   border-radius: .5rem;
-  border: 1px solid #e8dfd3;
+  border: 1px solid #dcdcdc;
 }
 
 .write-checklist summary {

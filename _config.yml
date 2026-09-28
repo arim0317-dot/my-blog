@@ -59,17 +59,17 @@ edit_page_button: true
 # --- Colours / background image --- #
 ######################################
 
-page-col: "#FFFFFF"
+page-col: "#efefef"
 text-col: "#2c2c2c"
-link-col: "#c0392b"
-hover-col: "#8e2a1f"
-navbar-col: "#f9f5f0"
+link-col: "#6c4fd1"
+hover-col: "#4f39a3"
+navbar-col: "#f7f7f7"
 navbar-text-col: "#2c2c2c"
-navbar-border-col: "#e8dfd3"
+navbar-border-col: "#dcdcdc"
 footer-col: "#3d3d52"
 footer-text-col: "#dddddd"
 footer-link-col: "#ffffff"
-footer-hover-col: "#e89584"
+footer-hover-col: "#c9b8f5"
 
 ##########################################
 # --- Jekyll / Beautiful Jekyll setup --- #

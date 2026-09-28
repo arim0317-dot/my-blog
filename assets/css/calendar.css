@@ -1,0 +1,107 @@
+/* ---------- Sidebar calendar (replaces the old tag list) ---------- */
+.sidebar-calendar {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.home-calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .4rem;
+  margin-bottom: .6rem;
+}
+
+.home-calendar-title {
+  font-weight: 700;
+  font-size: .95rem;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.cal-nav-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  color: #4f39a3;
+  width: 1.6rem;
+  height: 1.6rem;
+  flex: none;
+  line-height: 1;
+  border-radius: 50%;
+  font-size: .95rem;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.cal-nav-btn:hover:not(:disabled) {
+  background: #6c4fd1;
+  border-color: #6c4fd1;
+  color: #fff;
+}
+
+.cal-nav-btn:disabled {
+  opacity: .25;
+  cursor: not-allowed;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.calendar-table th {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: #b9ada0;
+  padding: 0 0 .35rem;
+}
+
+.calendar-table th.calendar-sun {
+  color: #6c4fd1;
+}
+
+.calendar-table td {
+  text-align: center;
+  padding: .2rem 0;
+  font-size: .78rem;
+  color: #2c2c2c;
+}
+
+.calendar-day-empty {
+  color: transparent;
+}
+
+.calendar-day-out {
+  color: #d9cbb8;
+}
+
+.calendar-day-sun {
+  color: #6c4fd1;
+}
+
+.calendar-day-today .calendar-day-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: #6c4fd1;
+  color: #fff;
+  font-weight: 700;
+}
+
+.home-calendar-today {
+  font-size: .72rem;
+  line-height: 1.5;
+  color: #999;
+  margin: .6rem 0 0;
+}
+
+.home-calendar-today strong {
+  color: #6c4fd1;
+  font-weight: 700;
+}

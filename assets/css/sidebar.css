@@ -1,13 +1,10 @@
 .sidebar-filter {
-  border-right: 1px solid #e8dfd3;
+  border-right: 1px solid #dcdcdc;
   margin-bottom: 2rem;
 }
 
 .profile-card {
   text-align: center;
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #e8dfd3;
 }
 
 .profile-avatar {
@@ -25,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(150deg, #c0392b, #8e2a1f);
+  background: linear-gradient(150deg, #6c4fd1, #4f39a3);
   color: #fff;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2rem;
@@ -41,7 +38,40 @@
 .profile-tagline {
   font-size: .85rem;
   color: #777;
-  margin: 0;
+  margin: 0 0 .9rem;
+}
+
+.profile-stat {
+  font-size: .82rem;
+  color: #2c2c2c;
+  margin: 0 0 .9rem;
+}
+
+.profile-stat strong {
+  color: #6c4fd1;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.profile-action-btn {
+  display: inline-block;
+  padding: .3rem .9rem;
+  border-radius: 999px;
+  border: 1px solid #6c4fd1;
+  color: #6c4fd1;
+  font-size: .78rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color .15s ease, color .15s ease;
+}
+
+.profile-action-btn:hover {
+  background: #6c4fd1;
+  color: #fff;
 }
 
 .sidebar-sticky {
@@ -50,13 +80,19 @@
 }
 
 .sidebar-heading {
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 3px solid #6c4fd1;
   font-weight: 700;
-  color: #2c2c2c;
+  font-size: .82rem;
+  letter-spacing: .03em;
+  color: #6c4fd1;
 }
 
 .sidebar-heading:first-child {
   margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
 .sidebar-list {
@@ -74,7 +110,7 @@
 
 .sidebar-list .filter-link:hover,
 .sidebar-list .filter-link.active {
-  color: #c0392b;
+  color: #6c4fd1;
   font-weight: 700;
 }
 
@@ -88,8 +124,8 @@
   padding: 0.15rem 0.6rem;
   margin-bottom: 0.5rem;
   border-radius: 999px;
-  background: #f3e6e2;
-  color: #8e2a1f;
+  background: #ece6fa;
+  color: #4f39a3;
   font-size: 0.75rem;
   font-weight: 700;
 }
@@ -97,7 +133,7 @@
 @media (max-width: 767px) {
   .sidebar-filter {
     border-right: none;
-    border-bottom: 1px solid #e8dfd3;
+    border-bottom: 1px solid #dcdcdc;
     padding-bottom: 1rem;
   }
 

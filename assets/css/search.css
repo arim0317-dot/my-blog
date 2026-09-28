@@ -1,4 +1,4 @@
-/* Restyle the theme's default search overlay to match the blog's warm editorial palette */
+/* Restyle the theme's default search overlay to match the blog's purple/gray palette */
 
 #beautifuljekyll-search-overlay {
   background: rgba(27, 27, 27, .94);
@@ -19,7 +19,7 @@
 }
 
 #nav-search-input {
-  background: #f9f5f0;
+  background: #efefef;
   color: #2c2c2c;
   font-size: 1.5rem;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -36,7 +36,7 @@
 
 #nav-search-input:focus {
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(192, 57, 43, .35);
+  box-shadow: 0 0 0 3px rgba(108, 79, 209, .35);
 }
 
 #search-results-container {
@@ -48,10 +48,10 @@
 }
 
 #search-results-container a {
-  color: #f2e9e4;
+  color: #d9cdf7;
 }
 
 #search-results-container a:hover {
-  color: #e89584;
+  color: #b39ddb;
   text-decoration: underline;
 }
