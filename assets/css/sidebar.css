@@ -83,6 +83,17 @@
   font-size: 0.85em;
 }
 
+.post-module-badge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  margin-bottom: 0.5rem;
+  border-radius: 999px;
+  background: #f3e6e2;
+  color: #8e2a1f;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
 @media (max-width: 767px) {
   .sidebar-filter {
     border-right: none;

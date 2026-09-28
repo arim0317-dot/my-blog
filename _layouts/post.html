@@ -39,6 +39,10 @@ layout: base
         </div>
       {% endif %}
 
+      {% if page.module %}
+      <span class="post-module-badge">{{ page.module }}</span>
+      {% endif %}
+
       <article role="main" class="blog-post">
         {{ content }}
       </article>

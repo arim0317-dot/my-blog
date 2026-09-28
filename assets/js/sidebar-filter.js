@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (type === 'all') {
       return true;
     }
-    var attr = type === 'category' ? 'categories' : 'tags';
+    var attr = type === 'category' ? 'categories' : type === 'module' ? 'module' : 'tags';
     var raw = post.getAttribute('data-' + attr) || '';
     var list = raw.split('|').filter(Boolean);
     return list.indexOf(value) !== -1;

@@ -5,6 +5,7 @@ date: 2026-09-08 14:46:00 +0900
 categories: [기획]
 tags: [요구사항정의, git, 협업, 부트캠프, 팀프로젝트]
 mermaid: true
+module: "Module 1"
 ---
 
 ## 들어가며 (Situation)

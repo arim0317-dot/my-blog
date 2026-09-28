@@ -50,6 +50,7 @@ post_search: true
 # 검색창 등 모든 페이지에 공통으로 적용할 스타일
 site-css:
   - "/assets/css/search.css"
+  - "/assets/css/sidebar.css"
 
 # GitHub에 호스팅된 페이지에 "이 페이지 수정" 버튼 추가
 edit_page_button: true

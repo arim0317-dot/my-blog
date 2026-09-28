@@ -23,6 +23,24 @@ layout: base
         <p class="profile-tagline">개발하며 배운 것을 기록합니다</p>
       </div>
 
+      {%- assign modules = "" -%}
+      {%- for post in site.posts -%}
+        {%- if post.module -%}
+          {%- assign modules = modules | append: post.module | append: "," -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- assign module_list = modules | split: "," | uniq | sort -%}
+      {%- if module_list.size > 0 -%}
+      <h5 class="sidebar-heading">모듈</h5>
+      <ul class="list-unstyled sidebar-list" role="list">
+        {%- for m in module_list -%}
+          {%- if m != "" -%}
+        <li><a href="#" class="filter-link" data-filter-type="module" data-filter-value="{{ m }}">{{ m }}</a></li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+      {%- endif -%}
+
       <h5 class="sidebar-heading">카테고리</h5>
       <ul class="list-unstyled sidebar-list" role="list">
         <li><a href="#" class="filter-link active" data-filter-type="all">전체 보기</a></li>
@@ -67,8 +85,12 @@ layout: base
       {%- endif -%}
       {%- assign post_tags = "" -%}
       {%- for t in post.tags -%}{%- assign post_tags = post_tags | append: t | append: "|" -%}{%- endfor -%}
-      <li class="post-preview" data-categories="{{ post_cats }}" data-tags="{{ post_tags }}">
+      <li class="post-preview" data-categories="{{ post_cats }}" data-tags="{{ post_tags }}" data-module="{{ post.module }}">
         <article>
+
+          {% if post.module %}
+          <span class="post-module-badge">{{ post.module }}</span>
+          {% endif %}
 
           {%- capture thumbnail -%}
             {% if post.thumbnail-img %}

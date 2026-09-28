@@ -2,6 +2,8 @@
 layout: post
 title: "GitHub 원격 저장소 연결하기"
 date: 2026-08-31
+module: "Module 1"
+categories: [Git]
 ---
 
 지금까지는 `git push`, `git pull`을 그냥 명령어로만 써봤는데,

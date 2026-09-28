@@ -5,6 +5,7 @@ date: 2026-09-28 15:30:00 +0900
 categories: [Java]
 tags: [java, 자료형, 형변환, 연산자, 비트]
 mermaid: true
+module: "Module 2"
 ---
 
 ## 들어가며 (Situation)

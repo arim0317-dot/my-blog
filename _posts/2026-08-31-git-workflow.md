@@ -2,6 +2,8 @@
 layout: post
 title: "이번 주 배운 Git 명령어 정리"
 date: 2026-08-31
+module: "Module 1"
+categories: [Git]
 ---
 
 이번 주에는 **저장소 만들기 → 스테이징 → 커밋 → 브랜치 → push/pull → merge → 되돌리기**까지,

@@ -5,6 +5,7 @@ date: 2026-09-04 16:08:00 +0900
 categories: [Frontend]
 tags: [css, 웹개발, 부트캠프, 기초]
 mermaid: true
+module: "Module 1"
 ---
 
 ## 들어가며 (Situation)

@@ -2,6 +2,8 @@
 layout: post
 title: "push 하기 전에 pull 안 해서 겪은 git 충돌"
 date: 2026-08-31
+module: "Module 1"
+categories: [Git]
 ---
 
 오늘 블로그 글을 올리려고 `git push`를 했는데 처음으로 **충돌(conflict)**을 겪었다.

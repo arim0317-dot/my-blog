@@ -5,6 +5,7 @@ date: 2026-09-04 17:18:00 +0900
 categories: [AI 도구]
 tags: [바이브코딩, claude-code, 기획, 서브에이전트, 부트캠프]
 mermaid: true
+module: "Module 1"
 ---
 
 ## 들어가며 (Situation)
