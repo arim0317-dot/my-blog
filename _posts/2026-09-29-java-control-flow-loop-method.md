@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "if/switch보다 중요했던 건 메소드 — Java 제어문·반복문·메소드 정리"
+title: "Java 제어문·반복문·메소드 정리"
 date: 2026-09-29 15:00:00 +0900
 categories: [Java]
 tags: [java, 제어문, 반복문, 메소드, method]
