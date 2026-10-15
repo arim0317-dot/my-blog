@@ -51,29 +51,6 @@
   color: #6c4fd1;
 }
 
-.profile-actions {
-  display: flex;
-  justify-content: center;
-  gap: .5rem;
-}
-
-.profile-action-btn {
-  display: inline-block;
-  padding: .3rem .9rem;
-  border-radius: 999px;
-  border: 1px solid #6c4fd1;
-  color: #6c4fd1;
-  font-size: .78rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background-color .15s ease, color .15s ease;
-}
-
-.profile-action-btn:hover {
-  background: #6c4fd1;
-  color: #fff;
-}
-
 .sidebar-sticky {
   position: sticky;
   top: 90px;
@@ -140,4 +117,39 @@
   .sidebar-sticky {
     position: static;
   }
+}
+
+/* ---------- 방문자 수 ---------- */
+.visitor-box {
+  display: flex;
+  margin: 0 auto .9rem;
+  max-width: 11rem;
+  border: 1px solid #dcdcdc;
+  border-radius: .35rem;
+  background: #fff;
+  overflow: hidden;
+}
+
+.visitor-item {
+  flex: 1;
+  padding: .4rem .25rem;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.visitor-item + .visitor-item {
+  border-left: 1px solid #dcdcdc;
+}
+
+.visitor-label {
+  display: block;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  color: #777;
+}
+
+.visitor-item strong {
+  display: block;
+  font-size: 1rem;
+  color: #6c4fd1;
 }

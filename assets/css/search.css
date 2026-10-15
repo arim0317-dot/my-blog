@@ -1,57 +1,204 @@
-/* Restyle the theme's default search overlay to match the blog's purple/gray palette */
+/* 검색 오버레이: 블로그의 보라/회색 팔레트에 맞춘 스타일 */
 
 #beautifuljekyll-search-overlay {
   background: rgba(27, 27, 27, .94);
-  backdrop-filter: blur(2px);
-  padding-top: 8vh;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  padding: 8vh 1rem 1rem;
+  overflow-y: auto;
+}
+
+.search-box {
+  max-width: 44rem;
+  margin: 0 auto;
+  text-align: left;
 }
 
 #nav-search-exit {
-  top: 2rem;
-  color: rgba(255, 255, 255, .55);
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  transition: color .2s ease;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.75rem;
+  margin: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, .6);
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: color .2s ease, background-color .2s ease;
 }
 
 #nav-search-exit:hover {
   color: #fff;
+  background: rgba(255, 255, 255, .12);
 }
 
 #nav-search-input {
+  width: 100%;
   background: #efefef;
   color: #2c2c2c;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  max-width: 40rem;
-  padding: .75rem 2rem;
+  font-weight: 600;
+  text-align: left;
+  padding: .8rem 1.5rem;
   border: 1px solid transparent;
+  border-radius: 5rem;
   transition: box-shadow .25s ease, background .25s ease;
 }
 
 #nav-search-input::placeholder {
   color: #9a9a9a;
+  font-weight: 400;
 }
 
 #nav-search-input:focus {
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(108, 79, 209, .35);
+  box-shadow: 0 0 0 3px rgba(108, 79, 209, .45);
 }
 
+/* 카테고리 필터 */
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: 1rem 0 .25rem;
+}
+
+.search-chip {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(255, 255, 255, .22);
+  background: transparent;
+  color: #d4d4d4;
+  padding: .2rem .75rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.search-chip span {
+  opacity: .6;
+  margin-left: .1rem;
+  font-size: .78rem;
+}
+
+.search-chip:hover {
+  border-color: rgba(255, 255, 255, .5);
+  color: #fff;
+}
+
+.search-chip.active {
+  background: #6c4fd1;
+  border-color: #6c4fd1;
+  color: #fff;
+  font-weight: 700;
+}
+
+.search-chip:focus-visible,
+.search-item:focus-visible {
+  outline: 2px solid #b39ddb;
+  outline-offset: 2px;
+}
+
+.search-status {
+  margin: .9rem .25rem .6rem;
+  color: #a9a9b6;
+  font-size: .85rem;
+  min-height: 1.3em;
+}
+
+/* 결과 목록 */
 #search-results-container {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1.15rem;
-  max-width: 40rem;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  max-height: none;
+  overflow: visible;
 }
 
-#search-results-container a {
-  color: #d9cdf7;
+#search-results-container li + li {
+  margin-top: .5rem;
 }
 
-#search-results-container a:hover {
-  color: #b39ddb;
-  text-decoration: underline;
+#search-results-container a.search-item {
+  display: block;
+  padding: .85rem 1.1rem;
+  border-radius: .6rem;
+  border: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(255, 255, 255, .05);
+  color: #fff;
+  text-decoration: none;
+  transition: background-color .15s ease, border-color .15s ease, transform .15s ease;
+}
+
+#search-results-container a.search-item:hover,
+#search-results-container a.search-item:focus {
+  background: rgba(255, 255, 255, .11);
+  border-color: rgba(179, 157, 219, .6);
+  color: #fff;
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
+.search-item-title {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.search-item-meta {
+  display: block;
+  margin-top: .15rem;
+  font-size: .78rem;
+  color: #a9a9b6;
+}
+
+.search-item-tag {
+  margin-left: .5rem;
+  color: #c9b8f5;
+}
+
+.search-item-snippet {
+  display: block;
+  margin-top: .4rem;
+  font-size: .86rem;
+  line-height: 1.55;
+  color: #c4c4cf;
+}
+
+.search-item mark {
+  background: rgba(108, 79, 209, .75);
+  color: #fff;
+  padding: 0 .12em;
+  border-radius: 3px;
+}
+
+@media (max-width: 767px) {
+  #beautifuljekyll-search-overlay {
+    padding-top: 4.5rem;
+  }
+
+  #nav-search-exit {
+    top: .75rem;
+    right: .75rem;
+  }
+
+  #nav-search-input {
+    font-size: 1.05rem;
+    padding: .7rem 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #search-results-container a.search-item {
+    transition: none;
+  }
 }

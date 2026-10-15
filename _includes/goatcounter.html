@@ -1,0 +1,4 @@
+{% assign gc_code = site.goatcounter | default: "" | strip %}
+{% if gc_code != "" %}
+<script data-goatcounter="https://{{ gc_code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{% endif %}

@@ -1,0 +1,22 @@
+{% comment %}
+  테마 기본 검색 오버레이를 대체한다. (테마의 열기/닫기 스크립트가 쓰는 id는 그대로 유지)
+  - 제목 / 태그 / 카테고리 / 본문 검색, 검색어 하이라이트, 카테고리 필터
+  - 데이터는 처음 열 때 /search.json 을 한 번만 불러온다.
+{% endcomment %}
+{% if site.post_search %}
+
+<div id="beautifuljekyll-search-overlay" data-json="{{ '/search.json' | relative_url }}">
+
+  <div id="nav-search-exit" title="닫기 (Esc)" role="button" aria-label="검색 닫기">✕</div>
+
+  <div class="search-box">
+    <input type="text" id="nav-search-input" placeholder="제목, 태그, 본문으로 검색" autocomplete="off" aria-label="글 검색">
+    <div class="search-filters" id="search-filters" role="group" aria-label="카테고리 필터"></div>
+    <p class="search-status" id="search-status" aria-live="polite"></p>
+    <ul id="search-results-container"></ul>
+  </div>
+
+  <script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
+</div>
+
+{% endif %}

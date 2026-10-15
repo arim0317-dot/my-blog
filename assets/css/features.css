@@ -1,0 +1,213 @@
+/* ============================================================
+   추가 기능 스타일: 목차 / 코드 복사 버튼 / 맨 위로 버튼 / 학습 기록
+   (기존 보라 #6c4fd1 / 회색 팔레트 유지)
+   ============================================================ */
+
+/* ---------- 헤딩 앵커가 고정 네비게이션에 가리지 않도록 ---------- */
+.blog-post h2,
+.blog-post h3,
+.blog-post h4 {
+  scroll-margin-top: 5.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- 목차 ---------- */
+.post-toc {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: .9rem;
+  margin: 0 0 2rem;
+  border: 1px solid #dcdcdc;
+  border-left: 4px solid #6c4fd1;
+  border-radius: .35rem;
+  background: #fff;
+}
+
+.post-toc summary {
+  padding: .65rem 1rem;
+  font-weight: 700;
+  color: #4f39a3;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.post-toc summary::-webkit-details-marker { display: none; }
+.post-toc summary .fa { margin-right: .35rem; }
+
+.post-toc summary::after {
+  content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: .7rem;
+  float: right;
+  margin-top: .3rem;
+  transition: transform .2s ease;
+}
+
+.post-toc[open] summary::after { transform: rotate(180deg); }
+
+.post-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0 .5rem .6rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.post-toc li { margin: 0; }
+
+.post-toc a {
+  display: block;
+  padding: .28rem .6rem;
+  border-left: 2px solid transparent;
+  color: #555;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+}
+
+.post-toc .toc-sub a {
+  padding-left: 1.5rem;
+  font-size: .85rem;
+}
+
+.post-toc a:hover {
+  color: #6c4fd1;
+  background: #f4f1fc;
+}
+
+.post-toc a.is-active {
+  color: #6c4fd1;
+  font-weight: 700;
+  border-left-color: #6c4fd1;
+  background: #f4f1fc;
+}
+
+@media (min-width: 1360px) {
+  .post-toc {
+    position: fixed;
+    top: 6.5rem;
+    left: calc(50% + 400px);
+    width: 15.5rem;
+    max-height: calc(100vh - 8.5rem);
+    margin: 0;
+    z-index: 10;
+    border: 0;
+    border-left: 1px solid #dcdcdc;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .post-toc summary {
+    cursor: default;
+    padding: 0 0 .5rem 1rem;
+    font-size: .8rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .post-toc summary::after { display: none; }
+  .post-toc ol { max-height: calc(100vh - 12rem); padding: 0; }
+}
+
+/* ---------- 코드 복사 버튼 ---------- */
+.has-copy-btn,
+.code-wrap {
+  position: relative;
+}
+
+.code-copy-btn {
+  position: absolute;
+  top: .45rem;
+  right: .5rem;
+  z-index: 2;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #dcdcdc;
+  background: rgba(255, 255, 255, .92);
+  color: #555;
+  padding: .12rem .6rem;
+  border-radius: .3rem;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.has-copy-btn:hover .code-copy-btn,
+.code-copy-btn:focus-visible,
+.code-copy-btn.is-done {
+  opacity: 1;
+}
+
+.code-copy-btn:hover {
+  border-color: #6c4fd1;
+  color: #6c4fd1;
+}
+
+.code-copy-btn.is-done {
+  background: #6c4fd1;
+  border-color: #6c4fd1;
+  color: #fff;
+}
+
+.code-copy-btn:focus-visible,
+#back-to-top:focus-visible {
+  outline: 2px solid #6c4fd1;
+  outline-offset: 2px;
+}
+
+/* 마우스 호버가 없는 터치 기기에서는 항상 보이게 */
+@media (hover: none) {
+  .code-copy-btn { opacity: .85; }
+}
+
+/* ---------- 맨 위로 버튼 ---------- */
+#back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 900;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dcdcdc;
+  border-radius: 50%;
+  background: #fff;
+  color: #6c4fd1;
+  font-size: .95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(44, 34, 24, .15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s, background-color .15s ease, color .15s ease;
+}
+
+#back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+#back-to-top:hover {
+  background: #6c4fd1;
+  border-color: #6c4fd1;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  #back-to-top { right: 1rem; bottom: 1rem; }
+}

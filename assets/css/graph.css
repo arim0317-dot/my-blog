@@ -1,0 +1,206 @@
+/* 지식 연결 지도 (기존 보라 #6c4fd1 / 회색 팔레트 유지) */
+
+.kg {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  max-width: 78rem;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+.kg-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .75rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.kg-stats {
+  margin: 0;
+  font-size: .9rem;
+  font-weight: 700;
+  color: #4f39a3;
+}
+
+.kg-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.kg-chip {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .2rem .75rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 999px;
+  background: #fff;
+  color: #2c2c2c;
+  font-family: inherit;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease, color .15s ease;
+}
+
+.kg-chip small { color: #777; font-size: .75rem; }
+.kg-chip:hover { border-color: #6c4fd1; }
+
+.kg-chip.active {
+  background: #6c4fd1;
+  border-color: #6c4fd1;
+  color: #fff;
+  font-weight: 700;
+}
+
+.kg-chip.active small { color: rgba(255, 255, 255, .8); }
+
+.kg-chip:focus-visible,
+.kg-controls button:focus-visible,
+.kg-info-link:focus-visible,
+.kg-list summary:focus-visible {
+  outline: 2px solid #6c4fd1;
+  outline-offset: 2px;
+}
+
+.kg-dot {
+  display: inline-block;
+  width: .7rem;
+  height: .7rem;
+  border-radius: 50%;
+  flex: none;
+}
+
+.kg-stage {
+  position: relative;
+  height: 70vh;
+  min-height: 420px;
+  max-height: 760px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle, #e4e0f2 1px, transparent 1px) 0 0 / 22px 22px,
+    #fff;
+  border: 1px solid #dcdcdc;
+  border-top: 3px solid #6c4fd1;
+  box-shadow: 0 1px 2px rgba(44, 34, 24, .05);
+}
+
+#kg-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#kg-canvas:active { cursor: grabbing; }
+
+.kg-controls {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.kg-controls button {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid #dcdcdc;
+  border-radius: .35rem;
+  background: rgba(255, 255, 255, .95);
+  color: #4f39a3;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.kg-controls button:hover {
+  background: #6c4fd1;
+  border-color: #6c4fd1;
+  color: #fff;
+}
+
+.kg-tooltip,
+.kg-card {
+  position: absolute;
+  z-index: 2;
+  max-width: 17rem;
+  padding: .65rem .85rem;
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  border-left: 3px solid #6c4fd1;
+  box-shadow: 0 6px 18px rgba(44, 34, 24, .16);
+  font-size: .85rem;
+  line-height: 1.45;
+}
+
+.kg-tooltip { pointer-events: none; }
+.kg-tooltip[hidden], .kg-card[hidden], .kg-message[hidden] { display: none; }
+
+.kg-card {
+  left: .75rem;
+  bottom: .75rem;
+  max-width: calc(100% - 1.5rem);
+}
+
+.kg-info-title { display: block; color: #2c2c2c; font-size: .95rem; }
+
+.kg-info-meta {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: .2rem;
+  color: #777;
+  font-size: .78rem;
+}
+
+.kg-info-tags { margin-top: .2rem; color: #6c4fd1; font-size: .78rem; }
+
+.kg-info-link {
+  display: inline-block;
+  margin-top: .45rem;
+  font-weight: 700;
+  color: #6c4fd1;
+  text-decoration: none;
+}
+
+.kg-info-link:hover { color: #4f39a3; text-decoration: underline; }
+
+.kg-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #777;
+}
+
+.kg-help {
+  margin: 1rem 0 0;
+  font-size: .85rem;
+  line-height: 1.6;
+  color: #777;
+}
+
+.kg-list { margin-top: 1rem; font-size: .9rem; }
+.kg-list summary { cursor: pointer; font-weight: 700; color: #4f39a3; }
+.kg-list ul { margin: .75rem 0 0; padding-left: 1.25rem; }
+.kg-list li { margin-bottom: .4rem; }
+.kg-list-meta { color: #777; font-size: .82rem; }
+
+@media (max-width: 767px) {
+  .kg { padding: 0 .5rem; }
+  .kg-stage { height: 62vh; min-height: 360px; }
+  .kg-card { right: .75rem; }
+}

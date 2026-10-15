@@ -22,9 +22,13 @@ layout: base
         <p class="profile-name">{{ site.author }}</p>
         <p class="profile-tagline">개발하며 배운 것을 기록합니다</p>
         <p class="profile-stat"><strong>{{ site.posts.size }}</strong>개의 글</p>
-        <div class="profile-actions">
-          <a class="profile-action-btn" href="{{ '/write/' | relative_url }}">글쓰기</a>
+        {% assign gc_code = site.goatcounter | default: "" | strip %}
+        {% if gc_code != "" %}
+        <div class="visitor-box" id="visitor-box" data-goatcounter="{{ gc_code }}" aria-label="방문자 수">
+          <div class="visitor-item"><span class="visitor-label">오늘</span><strong id="visitor-today">-</strong></div>
+          <div class="visitor-item"><span class="visitor-label">전체</span><strong id="visitor-total">-</strong></div>
         </div>
+        {% endif %}
       </div>
 
       {%- assign modules = "" -%}
