@@ -1,6 +1,6 @@
 /* ============================================================
    추가 기능 스타일: 목차 / 코드 복사 버튼 / 맨 위로 버튼 / 학습 기록
-   (기존 보라 #6c4fd1 / 회색 팔레트 유지)
+   (기존 보라 #2f6b4f / 회색 팔레트 유지)
    ============================================================ */
 
 /* ---------- 헤딩 앵커가 고정 네비게이션에 가리지 않도록 ---------- */
@@ -23,8 +23,8 @@ html {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: .9rem;
   margin: 0 0 2rem;
-  border: 1px solid #dcdcdc;
-  border-left: 4px solid #6c4fd1;
+  border: 1px solid #e4dfd3;
+  border-left: 4px solid #2f6b4f;
   border-radius: .35rem;
   background: #fff;
 }
@@ -32,7 +32,7 @@ html {
 .post-toc summary {
   padding: .65rem 1rem;
   font-weight: 700;
-  color: #4f39a3;
+  color: #1f4d38;
   cursor: pointer;
   list-style: none;
   user-select: none;
@@ -79,28 +79,28 @@ html {
 }
 
 .post-toc a:hover {
-  color: #6c4fd1;
-  background: #f4f1fc;
+  color: #2f6b4f;
+  background: #e8f0eb;
 }
 
 .post-toc a.is-active {
-  color: #6c4fd1;
+  color: #2f6b4f;
   font-weight: 700;
-  border-left-color: #6c4fd1;
-  background: #f4f1fc;
+  border-left-color: #2f6b4f;
+  background: #e8f0eb;
 }
 
 @media (min-width: 1360px) {
   .post-toc {
     position: fixed;
-    top: 6.5rem;
+    top: 15rem;
     left: calc(50% + 400px);
     width: 15.5rem;
-    max-height: calc(100vh - 8.5rem);
+    max-height: calc(100vh - 17rem);
     margin: 0;
     z-index: 10;
     border: 0;
-    border-left: 1px solid #dcdcdc;
+    border-left: 1px solid #e4dfd3;
     border-radius: 0;
     background: transparent;
   }
@@ -114,7 +114,7 @@ html {
   }
 
   .post-toc summary::after { display: none; }
-  .post-toc ol { max-height: calc(100vh - 12rem); padding: 0; }
+  .post-toc ol { max-height: calc(100vh - 21rem); padding: 0; }
 }
 
 /* ---------- 코드 복사 버튼 ---------- */
@@ -130,7 +130,7 @@ html {
   z-index: 2;
   appearance: none;
   -webkit-appearance: none;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #e4dfd3;
   background: rgba(255, 255, 255, .92);
   color: #555;
   padding: .12rem .6rem;
@@ -151,19 +151,19 @@ html {
 }
 
 .code-copy-btn:hover {
-  border-color: #6c4fd1;
-  color: #6c4fd1;
+  border-color: #2f6b4f;
+  color: #2f6b4f;
 }
 
 .code-copy-btn.is-done {
-  background: #6c4fd1;
-  border-color: #6c4fd1;
+  background: #2f6b4f;
+  border-color: #2f6b4f;
   color: #fff;
 }
 
 .code-copy-btn:focus-visible,
 #back-to-top:focus-visible {
-  outline: 2px solid #6c4fd1;
+  outline: 2px solid #2f6b4f;
   outline-offset: 2px;
 }
 
@@ -183,10 +183,10 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #e4dfd3;
   border-radius: 50%;
   background: #fff;
-  color: #6c4fd1;
+  color: #2f6b4f;
   font-size: .95rem;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(44, 34, 24, .15);
@@ -203,8 +203,8 @@ html {
 }
 
 #back-to-top:hover {
-  background: #6c4fd1;
-  border-color: #6c4fd1;
+  background: #2f6b4f;
+  border-color: #2f6b4f;
   color: #fff;
 }
 

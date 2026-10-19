@@ -204,6 +204,9 @@
     openLink.addEventListener('click', function () { loadPosts(render); });
   }
 
+  var form = document.getElementById('search-form');
+  if (form) form.addEventListener('submit', function (e) { e.preventDefault(); loadPosts(render); });
+
   // 방향키로 결과 이동, Enter로 첫 결과 열기
   overlay.addEventListener('keydown', function (e) {
     var links = Array.prototype.slice.call(listEl.querySelectorAll('a'));

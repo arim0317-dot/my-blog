@@ -10,7 +10,16 @@
   <div id="nav-search-exit" title="닫기 (Esc)" role="button" aria-label="검색 닫기">✕</div>
 
   <div class="search-box">
-    <input type="text" id="nav-search-input" placeholder="제목, 태그, 본문으로 검색" autocomplete="off" aria-label="글 검색">
+    <div class="search-card">
+      <div class="search-card-head">
+        <h2>글 검색</h2>
+        <p>제목, 태그, 본문으로 찾아보세요.</p>
+      </div>
+      <form class="search-form" id="search-form" role="search">
+        <input type="text" id="nav-search-input" placeholder="검색어를 입력하세요" autocomplete="off" aria-label="글 검색">
+        <button type="submit" class="search-submit">검색</button>
+      </form>
+    </div>
     <div class="search-filters" id="search-filters" role="group" aria-label="카테고리 필터"></div>
     <p class="search-status" id="search-status" aria-live="polite"></p>
     <ul id="search-results-container"></ul>

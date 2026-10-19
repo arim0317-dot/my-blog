@@ -1,7 +1,5 @@
-/* ---------- Sidebar calendar (replaces the old tag list) ---------- */
-.sidebar-calendar {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
+/* 사이드바 공부 달력 */
+.sidebar-calendar { font-size: .85rem; }
 
 .home-calendar-head {
   display: flex;
@@ -12,38 +10,30 @@
 }
 
 .home-calendar-title {
+  margin: 0;
+  font-family: 'Noto Serif KR', serif;
   font-weight: 700;
   font-size: .95rem;
-  color: #2c2c2c;
-  margin: 0;
+  color: #2a2a28;
 }
 
 .cal-nav-btn {
   appearance: none;
   -webkit-appearance: none;
-  border: 1px solid #dcdcdc;
+  width: 1.7rem;
+  height: 1.7rem;
+  border: 1px solid #e4dfd3;
+  border-radius: .35rem;
   background: #fff;
-  color: #4f39a3;
-  width: 1.6rem;
-  height: 1.6rem;
-  flex: none;
+  color: #2f6b4f;
+  font-size: 1rem;
   line-height: 1;
-  border-radius: 50%;
-  font-size: .95rem;
   cursor: pointer;
-  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  transition: background-color .15s ease, color .15s ease;
 }
 
-.cal-nav-btn:hover:not(:disabled) {
-  background: #6c4fd1;
-  border-color: #6c4fd1;
-  color: #fff;
-}
-
-.cal-nav-btn:disabled {
-  opacity: .25;
-  cursor: not-allowed;
-}
+.cal-nav-btn:hover:not(:disabled) { background: #2f6b4f; border-color: #2f6b4f; color: #fff; }
+.cal-nav-btn:disabled { opacity: .35; cursor: default; }
 
 .calendar-table {
   width: 100%;
@@ -51,57 +41,53 @@
   table-layout: fixed;
 }
 
-.calendar-table th {
-  font-size: .62rem;
-  font-weight: 700;
-  letter-spacing: .02em;
-  color: #b9ada0;
-  padding: 0 0 .35rem;
-}
-
-.calendar-table th.calendar-sun {
-  color: #6c4fd1;
-}
-
+.calendar-table th,
 .calendar-table td {
+  border: 1px solid #ece8de;
   text-align: center;
-  padding: .2rem 0;
-  font-size: .78rem;
-  color: #2c2c2c;
+  padding: 0;
+  height: 1.9rem;
+  font-size: .72rem;
+  font-weight: 400;
+  color: #2a2a28;
+  position: relative;
 }
 
-.calendar-day-empty {
-  color: transparent;
-}
+.calendar-table th { height: 1.4rem; font-size: .66rem; color: #8a867c; background: transparent; }
+.calendar-table th.calendar-sun,
+.calendar-day-sun { color: #c2543f; }
+.calendar-day-out { color: #cfcabd; }
+.calendar-day-empty { background: transparent; }
 
-.calendar-day-out {
-  color: #d9cbb8;
-}
-
-.calendar-day-sun {
-  color: #6c4fd1;
+.calendar-day-post::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: #2f6b4f;
 }
 
 .calendar-day-today .calendar-day-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
-  background: #6c4fd1;
+  background: #2f6b4f;
   color: #fff;
   font-weight: 700;
 }
 
-.home-calendar-today {
-  font-size: .72rem;
-  line-height: 1.5;
-  color: #999;
-  margin: .6rem 0 0;
-}
+.cal-month-count { margin: .7rem 0 .35rem; font-size: .75rem; color: #6f6b60; }
+.cal-month-count strong { color: #2f6b4f; }
 
-.home-calendar-today strong {
-  color: #6c4fd1;
-  font-weight: 700;
-}
+.cal-bar { height: 4px; border-radius: 999px; background: #e9e4d8; overflow: hidden; }
+.cal-bar span { display: block; height: 100%; width: 0; background: #2f6b4f; transition: width .3s ease; }
+
+.home-calendar-today { margin: .6rem 0 0; font-size: .7rem; line-height: 1.5; color: #8a867c; }
+.home-calendar-today strong { color: #2f6b4f; }

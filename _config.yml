@@ -2,7 +2,8 @@
 # --- Required options --- #
 ############################
 
-title: "아림의 학습 블로그"
+title: "Arim's Blog"
+tagline: "천천히, 그러나 꾸준히 — 개발을 배우며 그날그날 정리한 것을 남깁니다"
 author: "신아림"
 
 url: "https://arim0317-dot.github.io"
@@ -59,8 +60,9 @@ post_search: true
 
 # 검색창 등 모든 페이지에 공통으로 적용할 스타일
 site-css:
+  - "/assets/css/theme.css"
+  - "/assets/css/calendar.css"
   - "/assets/css/search.css"
-  - "/assets/css/sidebar.css"
   - "/assets/css/features.css"
 
 # 모든 페이지에 적용되는 스크립트 (맨 위로 버튼, 코드 복사, 목차)
@@ -74,17 +76,17 @@ edit_page_button: true
 # --- Colours / background image --- #
 ######################################
 
-page-col: "#efefef"
-text-col: "#2c2c2c"
-link-col: "#6c4fd1"
-hover-col: "#4f39a3"
-navbar-col: "#f7f7f7"
-navbar-text-col: "#2c2c2c"
-navbar-border-col: "#dcdcdc"
-footer-col: "#3d3d52"
-footer-text-col: "#dddddd"
-footer-link-col: "#ffffff"
-footer-hover-col: "#c9b8f5"
+page-col: "#f6f4ef"
+text-col: "#2a2a28"
+link-col: "#2f6b4f"
+hover-col: "#1f4d38"
+navbar-col: "#f6f4ef"
+navbar-text-col: "#2a2a28"
+navbar-border-col: "#e4dfd3"
+footer-col: "#eeeae1"
+footer-text-col: "#6f6b60"
+footer-link-col: "#2f6b4f"
+footer-hover-col: "#1f4d38"
 
 ##########################################
 # --- Jekyll / Beautiful Jekyll setup --- #
@@ -103,7 +105,6 @@ kramdown:
   input: GFM
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
-paginate: 10
 
 date_format: "%Y-%m-%d"
 
@@ -122,6 +123,7 @@ defaults:
     values:
       layout: "page"
       head-extra:
+        - fonts.html
         - goatcounter.html
 
 exclude:

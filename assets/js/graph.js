@@ -14,7 +14,7 @@
   var statsEl = document.getElementById('kg-stats');
   var listEl = document.getElementById('kg-list');
 
-  var PALETTE = ['#6c4fd1', '#e0884b', '#2f9e8f', '#d9527a', '#4a8fd1', '#c2a23a', '#8a64d6', '#7a8794'];
+  var PALETTE = ['#2f6b4f', '#d98c4a', '#4a8fd1', '#c2543f', '#8a64d6', '#c2a23a', '#2f9e8f', '#7a8794'];
   var NO_CAT = '분류 없음';
 
   // 제목에서 키워드를 뽑을 때 의미가 약한 단어
@@ -198,7 +198,7 @@
       var pa = toScreen(l.a.x, l.a.y), pb = toScreen(l.b.x, l.b.y);
       var related = focus && (l.a === focus || l.b === focus);
       var dim = (focus && !related) || (activeCat && (l.a.cat !== activeCat || l.b.cat !== activeCat));
-      ctx.strokeStyle = related ? 'rgba(108,79,209,.85)' : 'rgba(108,79,209,' + (dim ? .07 : Math.min(.55, .2 + l.w / 20)) + ')';
+      ctx.strokeStyle = related ? 'rgba(47, 107, 79,.85)' : 'rgba(47, 107, 79,' + (dim ? .07 : Math.min(.55, .2 + l.w / 20)) + ')';
       ctx.lineWidth = (0.8 + Math.min(l.w, 9) / 3) * (related ? 1.4 : 1);
       ctx.beginPath(); ctx.moveTo(pa.x, pa.y); ctx.lineTo(pb.x, pb.y); ctx.stroke();
     });

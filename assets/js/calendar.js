@@ -12,6 +12,16 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
+  var postDays = {};
+  try {
+    JSON.parse(document.getElementById('cal-posts').textContent).forEach(function (k) { postDays[k] = true; });
+  } catch (e) {}
+  var countEl = document.getElementById('cal-month-count');
+  var barFill = document.getElementById('cal-bar-fill');
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+  function keyOf(y, m, d) { return y + '-' + pad(m + 1) + '-' + pad(d); }
+
   var now = new Date();
   var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
@@ -72,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var daysInMonth = new Date(year, month + 1, 0).getDate();
     var firstWeekday = firstOfMonth.getDay();
 
+    var monthPosts = 0;
     var html = '<tr>';
     for (var i = 0; i < firstWeekday; i++) {
       html += '<td class="calendar-day-empty"></td>';
@@ -87,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         classes.push('calendar-day-sun');
       }
       var numHtml = day;
+      if (postDays[keyOf(year, month, day)]) { classes.push('calendar-day-post'); monthPosts++; }
       if (sameDay(d, today)) {
         classes.push('calendar-day-today');
         numHtml = '<span class="calendar-day-num">' + day + '</span>';
@@ -106,6 +118,8 @@ document.addEventListener('DOMContentLoaded', function () {
     html += '</tr>';
 
     body.innerHTML = html;
+    if (countEl) countEl.innerHTML = (month + 1) + '월에 <strong>' + monthPosts + '편</strong>을 기록했어요';
+    if (barFill) barFill.style.width = Math.min(100, Math.round(monthPosts / daysInMonth * 100 * 3)) + '%';
   }
 
   prevBtn.addEventListener('click', function () {

@@ -1,0 +1,15 @@
+---
+layout: base
+---
+
+<div class="page-wrap page-single {% unless page.full-width %}page-narrow{% endunless %}">
+  <div class="post-wrap {% if page.full-width %}post-wide{% endif %}">
+    <header class="post-head">
+      <h1>{{ page.title | strip_html }}</h1>
+      {% if page.subtitle %}<p class="post-meta-line">{{ page.subtitle }}</p>{% endif %}
+    </header>
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+</div>

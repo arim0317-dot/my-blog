@@ -1,4 +1,4 @@
-/* 지식 연결 지도 (기존 보라 #6c4fd1 / 회색 팔레트 유지) */
+/* 지식 연결 지도 (기존 보라 #2f6b4f / 회색 팔레트 유지) */
 
 .kg {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -20,7 +20,7 @@
   margin: 0;
   font-size: .9rem;
   font-weight: 700;
-  color: #4f39a3;
+  color: #1f4d38;
 }
 
 .kg-legend {
@@ -36,7 +36,7 @@
   align-items: center;
   gap: .4rem;
   padding: .2rem .75rem;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #e4dfd3;
   border-radius: 999px;
   background: #fff;
   color: #2c2c2c;
@@ -47,11 +47,11 @@
 }
 
 .kg-chip small { color: #777; font-size: .75rem; }
-.kg-chip:hover { border-color: #6c4fd1; }
+.kg-chip:hover { border-color: #2f6b4f; }
 
 .kg-chip.active {
-  background: #6c4fd1;
-  border-color: #6c4fd1;
+  background: #2f6b4f;
+  border-color: #2f6b4f;
   color: #fff;
   font-weight: 700;
 }
@@ -62,7 +62,7 @@
 .kg-controls button:focus-visible,
 .kg-info-link:focus-visible,
 .kg-list summary:focus-visible {
-  outline: 2px solid #6c4fd1;
+  outline: 2px solid #2f6b4f;
   outline-offset: 2px;
 }
 
@@ -81,10 +81,10 @@
   max-height: 760px;
   overflow: hidden;
   background:
-    radial-gradient(circle, #e4e0f2 1px, transparent 1px) 0 0 / 22px 22px,
+    radial-gradient(circle, #e4dfd3 1px, transparent 1px) 0 0 / 22px 22px,
     #fff;
-  border: 1px solid #dcdcdc;
-  border-top: 3px solid #6c4fd1;
+  border: 1px solid #e4dfd3;
+  border-top: 3px solid #2f6b4f;
   box-shadow: 0 1px 2px rgba(44, 34, 24, .05);
 }
 
@@ -114,10 +114,10 @@
   -webkit-appearance: none;
   width: 2.25rem;
   height: 2.25rem;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #e4dfd3;
   border-radius: .35rem;
   background: rgba(255, 255, 255, .95);
-  color: #4f39a3;
+  color: #1f4d38;
   font-size: 1.1rem;
   line-height: 1;
   cursor: pointer;
@@ -125,8 +125,8 @@
 }
 
 .kg-controls button:hover {
-  background: #6c4fd1;
-  border-color: #6c4fd1;
+  background: #2f6b4f;
+  border-color: #2f6b4f;
   color: #fff;
 }
 
@@ -137,8 +137,8 @@
   max-width: 17rem;
   padding: .65rem .85rem;
   background: #fff;
-  border: 1px solid #dcdcdc;
-  border-left: 3px solid #6c4fd1;
+  border: 1px solid #e4dfd3;
+  border-left: 3px solid #2f6b4f;
   box-shadow: 0 6px 18px rgba(44, 34, 24, .16);
   font-size: .85rem;
   line-height: 1.45;
@@ -164,17 +164,17 @@
   font-size: .78rem;
 }
 
-.kg-info-tags { margin-top: .2rem; color: #6c4fd1; font-size: .78rem; }
+.kg-info-tags { margin-top: .2rem; color: #2f6b4f; font-size: .78rem; }
 
 .kg-info-link {
   display: inline-block;
   margin-top: .45rem;
   font-weight: 700;
-  color: #6c4fd1;
+  color: #2f6b4f;
   text-decoration: none;
 }
 
-.kg-info-link:hover { color: #4f39a3; text-decoration: underline; }
+.kg-info-link:hover { color: #1f4d38; text-decoration: underline; }
 
 .kg-message {
   position: absolute;
@@ -194,7 +194,7 @@
 }
 
 .kg-list { margin-top: 1rem; font-size: .9rem; }
-.kg-list summary { cursor: pointer; font-weight: 700; color: #4f39a3; }
+.kg-list summary { cursor: pointer; font-weight: 700; color: #1f4d38; }
 .kg-list ul { margin: .75rem 0 0; padding-left: 1.25rem; }
 .kg-list li { margin-bottom: .4rem; }
 .kg-list-meta { color: #777; font-size: .82rem; }
