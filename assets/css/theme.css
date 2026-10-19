@@ -241,7 +241,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 600; line-heigh
   text-decoration: none;
 }
 
-.featured:hover { text-decoration: none; color: var(--text); }
+.featured-body { display: block; color: var(--text); text-decoration: none; }
+.featured-body:hover { text-decoration: none; color: var(--text); }
 
 .featured-cover {
   display: flex;
@@ -260,7 +261,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 600; line-heigh
 
 .featured-label { font-size: .75rem; font-weight: 700; color: var(--green); }
 .featured-body h2 { margin: .5rem 0 .8rem; font-size: 1.9rem; font-weight: 600; line-height: 1.35; word-break: keep-all; }
-.featured:hover h2 { color: var(--green-dark); }
+.featured-body:hover h2 { color: var(--green-dark); }
 .featured-body p { margin: 0 0 1rem; font-size: .9rem; color: #6f6b60; }
 .featured-meta { font-size: .78rem; color: var(--muted); }
 
@@ -449,3 +450,177 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 600; line-heigh
 /* 테마 기본 CSS가 좁은 화면에서 검색 아이콘을 숨기므로 항상 보이게 */
 #nav-search-icon { display: inline-block !important; }
 #nav-search-text { display: none !important; }
+
+/* 프로필 GitHub 링크 */
+.profile-github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  margin-top: .85rem;
+  padding: .4rem .6rem;
+  border: 1px solid var(--border);
+  border-radius: .4rem;
+  color: var(--text);
+  font-size: .82rem;
+  text-decoration: none;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.profile-github:hover { background: var(--green); border-color: var(--green); color: #fff; text-decoration: none; }
+.profile-github:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+
+/* ---------- 전체 글 카드 다듬기 ---------- */
+.post-card a {
+  position: relative;
+  padding: 1.35rem 1.35rem 1.1rem;
+  border-radius: .7rem;
+  background: linear-gradient(180deg, #ffffff 0%, #fcfbf8 100%);
+  overflow: hidden;
+}
+
+/* 위쪽 초록 선: 마우스를 올리면 왼쪽에서 오른쪽으로 그려진다 */
+.post-card a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+
+.post-card a:hover::before,
+.post-card a:focus-visible::before { transform: scaleX(1); }
+
+.post-card-cat {
+  align-self: flex-start;
+  padding: .12rem .6rem;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--green-dark);
+  font-size: .72rem;
+  letter-spacing: .02em;
+}
+
+.post-card h3 { margin: .85rem 0 .6rem; font-size: 1.12rem; line-height: 1.5; }
+
+.post-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  margin-top: auto;
+  padding-top: .8rem;
+  border-top: 1px dashed var(--border);
+}
+
+.post-card-meta { margin-top: 0; }
+
+.post-card-more {
+  font-size: .76rem;
+  color: var(--green);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.post-card a:hover .post-card-more,
+.post-card a:focus-visible .post-card-more { opacity: 1; transform: none; }
+
+@media (hover: none) { .post-card-more { opacity: 1; transform: none; } }
+
+/* ---------- 오늘의 소식 ---------- */
+.news-box {
+  display: flex;
+  flex-direction: column;
+  min-height: 21rem;
+  padding: 1.3rem 1.4rem 1.1rem;
+  background: var(--cover);
+  border-radius: .55rem;
+}
+
+.news-head { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; padding-bottom: .7rem; border-bottom: 1px solid #cfc8b6; }
+.news-head h2 { margin: 0; font-size: 1.25rem; font-weight: 600; }
+.news-date { font-size: .74rem; color: #7d7767; white-space: nowrap; }
+
+.news-list { list-style: none; margin: 0; padding: 0; flex: 1; counter-reset: news; }
+
+.news-list li {
+  counter-increment: news;
+  display: grid;
+  grid-template-columns: 1.1rem 1fr;
+  gap: .5rem;
+  padding: .6rem 0;
+  border-bottom: 1px dashed #d4cdbb;
+  font-size: .86rem;
+  line-height: 1.5;
+}
+
+.news-list li:last-child { border-bottom: 0; }
+.news-list li::before { content: counter(news); font-family: var(--serif); font-weight: 700; color: var(--green); }
+.news-list li.news-msg { display: block; padding: 1.2rem 0; color: #7d7767; }
+.news-list li.news-msg::before { content: none; }
+
+.news-list a {
+  color: var(--text);
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: keep-all;
+}
+
+.news-list a:hover { color: var(--green-dark); text-decoration: underline; }
+.news-list a:focus-visible, .news-source a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.news-source { margin: .6rem 0 0; font-size: .7rem; color: #7d7767; }
+.news-source a { color: #5f5b4e; }
+
+/* ---------- 오늘의 날씨 ---------- */
+.weather {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .8rem 2rem;
+  margin-bottom: 1.2rem;
+  padding: 1rem 1.4rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: .6rem;
+}
+
+.weather-main { display: flex; align-items: center; gap: .9rem; min-width: 11rem; }
+.weather-icon { font-size: 2.3rem; line-height: 1; }
+.weather-title { margin: 0; font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+.weather-title small { margin-left: .35rem; font-family: var(--sans); font-size: .75rem; font-weight: 400; color: var(--muted); }
+.weather-desc { margin: .1rem 0 0; font-size: .85rem; color: #6f6b60; }
+
+.weather-temp { display: flex; align-items: baseline; gap: .1rem; }
+.weather-temp strong { font-family: var(--serif); font-size: 2.2rem; font-weight: 600; color: var(--green-dark); line-height: 1; }
+.weather-temp span { font-size: .95rem; color: var(--muted); }
+
+.weather-facts { display: flex; flex-wrap: wrap; gap: .5rem 1.6rem; margin: 0 0 0 auto; }
+.weather-facts div { text-align: center; }
+.weather-facts dt { font-size: .7rem; font-weight: 400; color: var(--muted); }
+.weather-facts dd { margin: 0; font-size: .92rem; font-weight: 500; }
+
+/* ---------- 최신 글 영역을 작게 ---------- */
+.featured { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.4rem; align-items: stretch; }
+.news-box { min-height: 0; padding: 1rem 1.2rem .9rem; }
+.news-head h2 { font-size: 1.05rem; }
+.news-list li { padding: .45rem 0; font-size: .82rem; }
+.featured-body { align-self: center; }
+.featured-body h2 { margin: .3rem 0 .5rem; font-size: 1.3rem; line-height: 1.4; }
+.featured-body p { margin: 0 0 .6rem; font-size: .82rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+@media (max-width: 991px) {
+  .featured { grid-template-columns: 1fr; }
+  .weather-facts { margin-left: 0; }
+}
+@media (max-width: 767px) {
+  .featured-body h2 { font-size: 1.2rem; }
+}

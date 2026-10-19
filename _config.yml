@@ -23,6 +23,15 @@ navbar-links:
 # --- Logo --- #
 ################
 
+# 프로필 카드의 GitHub 링크
+github_url: "https://github.com/arim0317-dot/my-blog"
+
+# 홈의 "오늘의 날씨" 위치 (Open-Meteo, 위도/경도). 기본값은 서울.
+weather:
+  city: "서울"
+  lat: 37.5665
+  lon: 126.978
+
 # 프로필 사진을 assets/img/avatar.jpg 로 추가한 뒤 아래 줄의 주석을 해제하면
 # 홈 화면의 "전체 글" 사이드바에 있는 프로필 카드에 표시된다. (설정 전까지는 이니셜 원형이 대신 보인다)
 # avatar: "/assets/img/avatar.jpg"

@@ -29,6 +29,9 @@ layout: base
           <p class="profile-tagline">배운 것을 글로 남깁니다</p>
         </div>
       </div>
+      {% if site.github_url %}
+      <a class="profile-github" href="{{ site.github_url }}" target="_blank" rel="noopener"><span class="fab fa-github" aria-hidden="true"></span> GitHub</a>
+      {% endif %}
       <div class="profile-stats">
         <div><span>글</span><strong>{{ site.posts.size }}</strong></div>
         <div><span>카테고리</span><strong>{{ cat_list.size }}</strong></div>
@@ -102,19 +105,41 @@ layout: base
   </aside>
 
   <main class="main">
-    {% if latest %}
-    <a class="featured" href="{{ latest.url | relative_url }}">
-      <div class="featured-cover" aria-hidden="true">
-        <span class="featured-cover-cat">{{ latest.categories[0] | default: "Dev Log" }}</span>
-        {% if latest.module %}<span class="featured-cover-sub">{{ latest.module }}</span>{% endif %}
+    {% assign wx = site.weather %}
+    <section class="weather" id="weather" data-lat="{{ wx.lat | default: 37.5665 }}" data-lon="{{ wx.lon | default: 126.978 }}" data-city="{{ wx.city | default: '서울' }}" aria-label="오늘의 날씨">
+      <div class="weather-main">
+        <span class="weather-icon" id="weather-icon" aria-hidden="true">·</span>
+        <div>
+          <p class="weather-title">오늘의 날씨 <small id="weather-city">{{ wx.city | default: '서울' }}</small></p>
+          <p class="weather-desc" id="weather-desc">날씨를 불러오는 중이에요…</p>
+        </div>
       </div>
-      <div class="featured-body">
+      <div class="weather-temp"><strong id="weather-temp">-</strong><span>°C</span></div>
+      <dl class="weather-facts">
+        <div><dt>최고 / 최저</dt><dd id="weather-range">-</dd></div>
+        <div><dt>강수확률</dt><dd id="weather-rain">-</dd></div>
+        <div><dt>체감</dt><dd id="weather-feel">-</dd></div>
+        <div><dt>습도</dt><dd id="weather-hum">-</dd></div>
+      </dl>
+    </section>
+
+    {% if latest %}
+    <div class="featured">
+      <aside class="news-box" id="news-box" aria-label="오늘의 소식">
+        <div class="news-head">
+          <h2>오늘의 소식</h2>
+          <span class="news-date" id="news-date"></span>
+        </div>
+        <ol class="news-list" id="news-list"><li class="news-msg">소식을 불러오는 중이에요…</li></ol>
+        <p class="news-source">IT 뉴스 &middot; <a href="https://www.etnews.com/" target="_blank" rel="noopener">전자신문</a> 제공</p>
+      </aside>
+      <a class="featured-body" href="{{ latest.url | relative_url }}">
         <span class="featured-label">최신 글</span>
         <h2>{{ latest.title | strip_html }}</h2>
         <p>{% include excerpt.html post=latest length=110 %}</p>
         <span class="featured-meta">{{ latest.date | date: "%Y년 %-m월 %-d일" }}{% if latest.categories[0] %} &middot; {{ latest.categories[0] }}{% endif %}</span>
-      </div>
-    </a>
+      </a>
+    </div>
     {% endif %}
 
     <section class="all-posts" id="all-posts">
@@ -131,7 +156,7 @@ layout: base
             <span class="post-card-cat">{{ post.categories[0] | default: "Dev Log" }}</span>
             <h3>{{ post.title | strip_html }}</h3>
             <p>{% include excerpt.html post=post length=90 %}</p>
-            <span class="post-card-meta">{{ post.date | date: "%Y.%m.%d" }}{% if post.module %} &middot; {{ post.module }}{% endif %}</span>
+            <span class="post-card-foot"><span class="post-card-meta">{{ post.date | date: "%Y.%m.%d" }}{% if post.module %} &middot; {{ post.module }}{% endif %}</span><span class="post-card-more" aria-hidden="true">읽어보기 &rarr;</span></span>
           </a>
         </li>
         {%- endfor -%}
