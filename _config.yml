@@ -18,6 +18,7 @@ rss-description: "개발을 배우며 정리하는 학습 블로그"
 
 navbar-links:
   지식 지도: "/graph/"
+  방명록: "/guestbook/"
 
 ################
 # --- Logo --- #

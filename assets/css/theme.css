@@ -624,3 +624,9 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 600; line-heigh
 @media (max-width: 767px) {
   .featured-body h2 { font-size: 1.2rem; }
 }
+
+/* ---------- 방명록 ---------- */
+.guestbook-intro { margin: 0 0 1.5rem; padding: 1rem 1.2rem; background: var(--soft); border-radius: .5rem; font-size: .92rem; line-height: 1.8; color: #3f4a43; }
+.guestbook-loading { margin: 0; padding: 2rem 0; text-align: center; color: var(--muted); }
+.guestbook-note { margin: 2rem 0 0; font-size: .82rem; color: var(--muted); }
+.guestbook .utterances { max-width: 100%; }
