@@ -33,9 +33,10 @@ weather:
   lat: 37.5665
   lon: 126.978
 
-# 프로필 사진을 assets/img/avatar.jpg 로 추가한 뒤 아래 줄의 주석을 해제하면
-# 홈 화면의 "전체 글" 사이드바에 있는 프로필 카드에 표시된다. (설정 전까지는 이니셜 원형이 대신 보인다)
-# avatar: "/assets/img/avatar.jpg"
+# 홈 화면 "전체 글" 사이드바의 프로필 카드 사진.
+# GitHub 프로필 사진 주소(https://github.com/<아이디>.png)를 쓰면 GitHub 사진을 바꿀 때 자동으로 반영된다.
+# 내 파일을 쓰려면 "/assets/img/avatar.jpg" 처럼 적는다. (비워 두면 이니셜 원형이 대신 보인다)
+avatar: "https://github.com/arim0317-dot.png"
 
 ###########################################
 # --- 방문자 카운터 (GoatCounter) --- #
