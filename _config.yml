@@ -142,3 +142,5 @@ exclude:
   - README.md
   - CLAUDE.md
   - .claude
+  - .github
+  - scripts
