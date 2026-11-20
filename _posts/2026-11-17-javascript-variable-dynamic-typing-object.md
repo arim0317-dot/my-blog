@@ -5,7 +5,7 @@ date: 2026-11-17 13:00:00 +0900
 categories: [JavaScript]
 tags: [javascript, variable, dynamic-typing, const, object]
 mermaid: true
-module: "Module 2"
+module: "Module 3"
 ---
 
 ## 들어가며 (Situation)

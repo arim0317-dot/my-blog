@@ -5,7 +5,7 @@ date: 2026-11-18 13:20:00 +0900
 categories: [JavaScript]
 tags: [javascript, event, addeventlistener, event-object, this]
 mermaid: true
-module: "Module 2"
+module: "Module 3"
 ---
 
 ## 들어가며 (Situation)
